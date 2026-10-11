@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-fr="Documentation — RETRO-DECK MD-1" data-en="Documentation — RETRO-DECK MD-1">Documentation — RETRO-DECK MD-1</title>
+<meta name="description" content="Documentation du prototype RETRO-DECK MD-1 : planifier, focus, écrire, fiches de révision, raccourcis, format des fichiers." data-fr="Documentation du prototype RETRO-DECK MD-1 : planifier, focus, écrire, fiches de révision, raccourcis, format des fichiers." data-en="Documentation for the RETRO-DECK MD-1 prototype: planning, focus, writing, revision cards, shortcuts, file formats.">
+<link rel="canonical" href="https://retrodeck.lastparadox.dev/docs">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RETRO-DECK MD-1">
+<meta property="og:title" content="Documentation — RETRO-DECK MD-1">
+<meta property="og:description" content="Documentation du prototype RETRO-DECK MD-1 : planifier, focus, écrire, fiches de révision, raccourcis, format des fichiers.">
+<meta property="og:url" content="https://retrodeck.lastparadox.dev/docs">
+<meta name="theme-color" content="#ecebe6">
+<link rel="stylesheet" href="/assets/epaper.css">
+</head>
+<body>
+<header class="nav"><div class="in">
+  <a class="brand" href="/">RETRO-DECK<i>MD-1</i></a>
+  <nav aria-label="Navigation">
+    <a href="/"><span class="fr">Accueil</span><span class="en">Home</span></a>
+    <a href="/campagne"><span class="fr">Campagne</span><span class="en">Campaign</span></a>
+    <a href="/docs" aria-current="page"><span class="fr">Docs</span><span class="en">Docs</span></a>
+    <a href="https://github.com/Lastexitfromnowhere/retro-deck" rel="noopener">GitHub</a>
+  </nav>
+  <span class="lang" role="group" aria-label="Langue / Language"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></span>
+</div></header>
+<div class="page">
+  <aside class="side" aria-label="Sommaire"><a href="#overview"><span class="fr">Vue d'ensemble</span><span class="en">Overview</span></a><a href="#data"><span class="fr">Où sont tes données</span><span class="en">Where your data lives</span></a><a href="#today"><span class="fr">Aujourd'hui et planifier</span><span class="en">Today and planning</span></a><a href="#energy"><span class="fr">Niveau d'énergie</span><span class="en">Energy level</span></a><a href="#focus"><span class="fr">Mode focus</span><span class="en">Focus mode</span></a><a href="#write"><span class="fr">Écrire</span><span class="en">Writing</span></a><a href="#cards"><span class="fr">Fiches de révision</span><span class="en">Revision cards</span></a><a href="#dump"><span class="fr">Vidage et bilan du soir</span><span class="en">Brain dump and evening review</span></a><a href="#nav"><span class="fr">Navigation et réglages</span><span class="en">Navigation and settings</span></a><a href="#keys"><span class="fr">Raccourcis</span><span class="en">Shortcuts</span></a><a href="#limits"><span class="fr">Ce que l'application ne fait pas</span><span class="en">What the app does not do</span></a></aside>
+  <article class="prose">
+<div class="fr" lang="fr">
+<h1>Documentation</h1>
+<p class="upd">Version du prototype · mise à jour le 11 octobre 2026</p>
+<div class="callout"><b>Prototype en développement.</b> Cette documentation décrit le prototype Windows actuel. L'application n'est pas encore distribuée ; des détails peuvent changer avant la version publique.</div>
+
+<h2 id="overview">Vue d'ensemble</h2>
+<p>RETRO-DECK MD-1 est un carnet de travail local pour Windows. Il tient en trois gestes : <b>planifier</b> sa journée (trois tâches maximum), <b>se concentrer</b> sur une seule chose, <b>retenir</b> ce que l'on apprend grâce à des fiches de révision. Tout fonctionne hors ligne, sans compte, et tes notes sont de simples fichiers <code>.md</code>.</p>
+
+<h2 id="data">Où sont tes données</h2>
+<p>Au premier lancement, l'application crée un dossier <code>RETRO-DECK</code> dans tes Documents :</p>
+<table><tr><th>Dossier</th><th>Contenu</th></tr>
+<tr><td><code>notes/</code></td><td>Tes notes et ton journal, en Markdown (<code>.md</code>).</td></tr>
+<tr><td><code>cards/</code></td><td>Une fiche de révision par fichier <code>.md</code>.</td></tr>
+<tr><td><code>data/</code></td><td>Le plan du jour, les niveaux d'énergie, les statistiques (JSON).</td></tr></table>
+<p>Tu peux ouvrir, copier, sauvegarder ces fichiers avec n'importe quel autre outil. Si l'application disparaît, tes fichiers restent lisibles.</p>
+
+<h2 id="today">Aujourd'hui et planifier</h2>
+<ul>
+<li><b>Trois tâches par jour, pas plus.</b> C'est un choix de conception : une liste courte se termine.</li>
+<li>L'<b>accueil</b> te propose une seule prochaine action, avec un bouton pour lancer le focus.</li>
+<li>L'assistant <b>« Planifier ma journée »</b> : tu indiques ton énergie (1 à 5), tu écris tes priorités en marquant chacune <b>dur</b> ou <b>léger</b>, et l'application propose un ordre. Énergie haute : le plus dur d'abord. Énergie basse : le léger d'abord.</li>
+<li>Si tu as écrit une « première chose pour demain » lors du bilan du soir, elle t'est proposée le matin.</li>
+</ul>
+
+<h2 id="energy">Niveau d'énergie</h2>
+<p>Un tap de 1 à 5, matin, midi ou soir. L'application calcule, <b>uniquement sur ton ordinateur</b>, ta meilleure période de la journée une fois assez de relevés enregistrés. C'est un ressenti que tu déclares : aucun capteur, aucune donnée de santé, aucun diagnostic. Les relevés sont dans <code>data/energy.json</code>.</p>
+
+<h2 id="focus">Mode focus</h2>
+<p>Une tâche, un minuteur (15, 25, 50 ou 90 minutes, réglable). Pendant que tu travailles ailleurs dans l'application, un petit compteur reste visible dans le menu. Les minutes terminées alimentent ton bilan du soir.</p>
+
+<h2 id="write">Écrire</h2>
+<ul>
+<li>Éditeur <b>plein écran</b>, sobre, avec <b>sauvegarde automatique</b>. La liste des notes est un tiroir (bouton ▤ ou <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>B</kbd>).</li>
+<li><b>Gabarits</b> : journal du jour, bloqué/débloqué, revue de semaine, cours (Cornell), fiche de lecture, réunion.</li>
+<li><b>Ouvrir n'importe quel fichier .md</b> : bouton « ouvrir un fichier », bouton « ouvrir un dossier » pour le parcourir, ou glisser un fichier dans la fenêtre. Les fichiers récents sont retenus. Les fichiers .md, .markdown et .txt (5 Mo maximum) sont acceptés.</li>
+<li><b>Mode lecture</b> (<kbd>Ctrl</kbd>+<kbd>E</kbd>) : titres, cases à cocher, citations, code.</li>
+<li>Une barre de commandes façon <b>nano</b> rappelle les raccourcis en bas de l'écran (voir « Raccourcis »).</li>
+</ul>
+
+<h2 id="cards">Fiches de révision</h2>
+<ul>
+<li>Sélectionne du texte dans une note, <kbd>Ctrl</kbd>+<kbd>J</kbd> : il devient une fiche. La question est pré-remplie avec le titre au-dessus.</li>
+<li>Révision espacée en trois notes : <b>revoir</b> (demain), <b>bien</b>, <b>facile</b>. Les intervalles s'allongent à chaque succès (principe SM-2 simplifié).</li>
+<li><b>Importer tes propres .md</b> comme fiches : par fichiers ou par dossier entier (liste à cocher). Un fichier qui commence par <code># Question</code> garde sa question ; sinon le nom du fichier sert de question. Les doublons sont ignorés et tes originaux ne sont jamais modifiés.</li>
+<li>La <b>bibliothèque</b> liste toutes les fiches, avec un filtre et l'accès au dossier.</li>
+</ul>
+<p>Format d'un fichier de fiche (lisible et modifiable à la main) :</p>
+<pre><code>---
+ease: 2.50
+interval: 3
+reps: 2
+due: 2026-10-15
+---
+# Pourquoi SameSite=None est-il rejeté ?
+Il doit aussi avoir l'attribut Secure (HTTPS).</code></pre>
+<p>L'en-tête entre <code>---</code> est facultatif : sans lui, la fiche est nouvelle et à voir aujourd'hui.</p>
+
+<h2 id="dump">Vidage et bilan du soir</h2>
+<ul>
+<li><b>Vidage de tête</b> : écris tout, sans trier. Ensuite chaque ligne devient une tâche, une note (<code>notes/vrac.md</code>), une idée (<code>notes/idees.md</code>) ou part à la poubelle.</li>
+<li><b>Bilan du soir</b> (60 secondes) : tes chiffres du jour, une victoire, un blocage, la première chose pour demain. Il est enregistré dans <code>notes/bilan-AAAA-MM-JJ.md</code>.</li>
+</ul>
+
+<h2 id="nav">Navigation et réglages</h2>
+<ul>
+<li>L'<b>accueil</b> affiche huit icônes. Une <b>croix directionnelle</b> en bas (et les flèches du clavier) déplace la sélection ; OK ouvre ; dans une section, ◄ et ► passent à la section voisine et ⌂ ramène à l'accueil.</li>
+<li>Le <b>menu</b> se replie en bande d'icônes (<kbd>Ctrl</kbd>+<kbd>B</kbd>) pour laisser toute la place à l'écriture.</li>
+<li>L'<b>engrenage</b> ouvre les réglages : thème (papier ou encre), taille du texte, largeur de la page, durée de focus par défaut.</li>
+</ul>
+
+<h2 id="keys">Raccourcis</h2>
+<div class="scroll"><table><tr><th>Touche</th><th>Action</th></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td>Enregistrer</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>X</kbd></td><td>Fermer la note (ou couper si du texte est sélectionné)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd> / <kbd>Ctrl</kbd>+<kbd>U</kbd></td><td>Couper la ligne / coller la ligne coupée</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Chercher (Entrée : suivant)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>L</kbd></td><td>Aller à la ligne n°</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>R</kbd></td><td>Insérer un fichier à la position du curseur</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd></td><td>Aide de l'éditeur</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>E</kbd></td><td>Basculer lecture / écriture</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>J</kbd></td><td>Créer une fiche depuis la sélection</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>N</kbd></td><td>Nouvelle note vide</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd> / <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>B</kbd></td><td>Replier le menu / ouvrir la liste des notes</td></tr>
+<tr><td><kbd>Alt</kbd>+flèches</td><td>Croix directionnelle depuis un champ de saisie</td></tr></table></div>
+<p><kbd>Ctrl</kbd>+<kbd>C</kbd> et <kbd>Ctrl</kbd>+<kbd>V</kbd> restent le copier-coller du système.</p>
+
+<h2 id="limits">Ce que l'application ne fait pas</h2>
+<ul>
+<li>Pas de synchronisation, pas de compte, pas de version mobile.</li>
+<li><b>Aucune IA</b>, aucun accès à tes mails ou calendriers.</li>
+<li>Pas de notifications, pas de séries à ne pas casser, pas de récompenses artificielles.</li>
+<li>Windows uniquement pour l'instant ; macOS et Linux sont envisagés sans date.</li>
+</ul>
+</div>
+<div class="en" lang="en">
+<h1>Documentation</h1>
+<p class="upd">Prototype version · updated October 11, 2026</p>
+<div class="callout"><b>Prototype in development.</b> This documentation describes the current Windows prototype. The app is not distributed yet; details may change before the public release.</div>
+
+<h2 id="overview">Overview</h2>
+<p>RETRO-DECK MD-1 is a local work notebook for Windows. It comes down to three moves: <b>plan</b> your day (three tasks at most), <b>focus</b> on one thing, <b>remember</b> what you learn through revision cards. Everything works offline, without an account, and your notes are plain <code>.md</code> files.</p>
+
+<h2 id="data">Where your data lives</h2>
+<p>On first launch the app creates a <code>RETRO-DECK</code> folder in your Documents:</p>
+<table><tr><th>Folder</th><th>Content</th></tr>
+<tr><td><code>notes/</code></td><td>Your notes and journal, in Markdown (<code>.md</code>).</td></tr>
+<tr><td><code>cards/</code></td><td>One revision card per <code>.md</code> file.</td></tr>
+<tr><td><code>data/</code></td><td>Today's plan, energy levels, statistics (JSON).</td></tr></table>
+<p>You can open, copy and back up these files with any other tool. If the app disappears, your files stay readable.</p>
+
+<h2 id="today">Today and planning</h2>
+<ul>
+<li><b>Three tasks a day, no more.</b> It is a design choice: a short list gets finished.</li>
+<li>The <b>home screen</b> suggests a single next action, with a button to start focus.</li>
+<li>The <b>“Plan my day”</b> assistant: you give your energy (1 to 5), write your priorities and mark each one <b>hard</b> or <b>light</b>, and the app suggests an order. High energy: the hardest first. Low energy: the light first.</li>
+<li>If you wrote a “first thing for tomorrow” in the evening review, it is offered in the morning.</li>
+</ul>
+
+<h2 id="energy">Energy level</h2>
+<p>One tap from 1 to 5, morning, noon or evening. The app works out your best period of the day, <b>only on your computer</b>, once enough readings are saved. It is a feeling you report yourself: no sensor, no health data, no diagnosis. Readings are stored in <code>data/energy.json</code>.</p>
+
+<h2 id="focus">Focus mode</h2>
+<p>One task, one timer (15, 25, 50 or 90 minutes, adjustable). While you work elsewhere in the app, a small counter stays visible in the menu. Completed minutes feed your evening review.</p>
+
+<h2 id="write">Writing</h2>
+<ul>
+<li>A <b>full-screen</b>, plain editor with <b>autosave</b>. The note list is a drawer (▤ button or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>).</li>
+<li><b>Templates</b>: daily journal, stuck/solved, weekly review, lecture notes (Cornell), reading notes, meeting.</li>
+<li><b>Open any .md file</b>: “open a file” button, “open a folder” button to browse it, or drag a file into the window. Recent files are remembered. .md, .markdown and .txt files (5 MB maximum) are accepted.</li>
+<li><b>Reading mode</b> (<kbd>Ctrl</kbd>+<kbd>E</kbd>): headings, checkboxes, quotes, code.</li>
+<li>A <b>nano</b>-style command bar reminds you of the shortcuts at the bottom of the screen (see “Shortcuts”).</li>
+</ul>
+
+<h2 id="cards">Revision cards</h2>
+<ul>
+<li>Select text in a note, <kbd>Ctrl</kbd>+<kbd>J</kbd>: it becomes a card. The question is pre-filled with the heading above.</li>
+<li>Spaced repetition with three grades: <b>again</b> (tomorrow), <b>good</b>, <b>easy</b>. Intervals grow after each success (simplified SM-2).</li>
+<li><b>Import your own .md files</b> as cards: by files or a whole folder (checklist). A file starting with <code># Question</code> keeps its question; otherwise the file name becomes the question. Duplicates are skipped and your originals are never modified.</li>
+<li>The <b>library</b> lists all cards, with a filter and access to the folder.</li>
+</ul>
+<p>Card file format (readable and editable by hand):</p>
+<pre><code>---
+ease: 2.50
+interval: 3
+reps: 2
+due: 2026-10-15
+---
+# Why is SameSite=None rejected?
+It must also have the Secure attribute (HTTPS).</code></pre>
+<p>The header between <code>---</code> is optional: without it, the card is new and due today.</p>
+
+<h2 id="dump">Brain dump and evening review</h2>
+<ul>
+<li><b>Brain dump</b>: write everything, without sorting. Then each line becomes a task, a note (<code>notes/vrac.md</code>), an idea (<code>notes/idees.md</code>) or goes to the bin.</li>
+<li><b>Evening review</b> (60 seconds): your numbers for the day, one win, one blocker, the first thing for tomorrow. It is saved to <code>notes/bilan-YYYY-MM-DD.md</code>.</li>
+</ul>
+
+<h2 id="nav">Navigation and settings</h2>
+<ul>
+<li>The <b>home screen</b> shows eight icons. A <b>directional pad</b> at the bottom (and the keyboard arrows) moves the selection; OK opens; inside a section, ◄ and ► go to the neighbouring section and ⌂ returns home.</li>
+<li>The <b>menu</b> folds into an icon strip (<kbd>Ctrl</kbd>+<kbd>B</kbd>) to leave all the room to writing.</li>
+<li>The <b>gear</b> opens settings: theme (paper or ink), text size, page width, default focus duration.</li>
+</ul>
+
+<h2 id="keys">Shortcuts</h2>
+<div class="scroll"><table><tr><th>Key</th><th>Action</th></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td>Save</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>X</kbd></td><td>Close the note (or cut when text is selected)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd> / <kbd>Ctrl</kbd>+<kbd>U</kbd></td><td>Cut the line / paste the cut line</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Search (Enter: next)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>L</kbd></td><td>Go to line number</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>R</kbd></td><td>Insert a file at the cursor</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd></td><td>Editor help</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>E</kbd></td><td>Toggle reading / writing</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>J</kbd></td><td>Create a card from the selection</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>N</kbd></td><td>New empty note</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd></td><td>Fold the menu / open the note list</td></tr>
+<tr><td><kbd>Alt</kbd>+arrows</td><td>Directional pad from an input field</td></tr></table></div>
+<p><kbd>Ctrl</kbd>+<kbd>C</kbd> and <kbd>Ctrl</kbd>+<kbd>V</kbd> remain the system copy and paste.</p>
+
+<h2 id="limits">What the app does not do</h2>
+<ul>
+<li>No sync, no account, no mobile version.</li>
+<li><b>No AI</b>, no access to your email or calendars.</li>
+<li>No notifications, no streaks to keep alive, no artificial rewards.</li>
+<li>Windows only for now; macOS and Linux are considered, with no date.</li>
+</ul>
+</div>
+  </article>
+</div>
+<footer class="foot"><div class="in">
+  <div>RETRO-DECK MD-1 · <span class="fr">un projet LastParadox</span><span class="en">a LastParadox project</span> · © 2026<br><span class="small"><span class="fr">Prototype en développement. Aucun achat n'est possible sur ce site.</span><span class="en">Prototype in development. Nothing can be purchased on this site.</span></span></div>
+  <nav aria-label="Liens légaux">
+    <a href="/terms"><span class="fr">Conditions</span><span class="en">Terms</span></a>
+    <a href="/privacy"><span class="fr">Confidentialité</span><span class="en">Privacy</span></a>
+    <a href="/legal"><span class="fr">Mentions légales</span><span class="en">Legal notice</span></a>
+    <a href="https://github.com/Lastexitfromnowhere/retro-deck" rel="noopener">GitHub</a>
+    <a href="mailto:support@lastparadox.xyz">support@lastparadox.xyz</a>
+  </nav>
+</div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

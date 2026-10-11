@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RETRO-DECK MD-1 — Trois tâches. Une journée plus claire.</title>
+<link rel="canonical" href="https://retrodeck.lastparadox.dev/campagne">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RETRO-DECK MD-1">
+<meta property="og:url" content="https://retrodeck.lastparadox.dev/campagne">
+<meta name="description" content="Le carnet de travail calme pour Windows : planifie selon ton énergie, concentre-toi sur une seule chose, transforme tes erreurs en révisions. Local, sans compte, sans abonnement. Projet en développement.">
+<style>
+  :root{--ink:#111;--paper:#ecebe6;--paper2:#e2e1db;--paper3:#f4f3ee;--grey:#8a8984;--line:#cfcec8}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:20px}
+  body{background:var(--paper);color:var(--ink);font:400 16px/1.7 "IBM Plex Mono",ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace}
+  a{color:inherit}
+  /* bandeau */
+  .top{border-bottom:1px solid var(--grey);background:var(--paper3)}
+  .top .in{max-width:1240px;margin:0 auto;padding:10px 24px;display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;font-size:13px}
+  .top b{letter-spacing:.04em}
+  .badge{border:1px solid var(--ink);padding:1px 10px;font-weight:700;font-size:12px}
+  .head{max-width:1240px;margin:0 auto;padding:44px 24px 26px;text-align:center}
+  .head h1{font-size:clamp(30px,5vw,50px);line-height:1.1;margin-bottom:12px}
+  .head p{max-width:40em;margin:0 auto;color:#444}
+  /* mise en page à 3 colonnes */
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:200px minmax(0,1fr) 320px;gap:36px;align-items:start}
+  .toc{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow:auto;font-size:13px;line-height:1.35}
+  .toc a{display:block;text-decoration:none;padding:7px 0 7px 12px;border-left:3px solid var(--line);color:#444}
+  .toc a:hover{color:var(--ink)}
+  .toc a.on{border-left-color:var(--ink);color:var(--ink);font-weight:700}
+  .side{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow:auto;padding-bottom:20px}
+  /* récit */
+  .story section{padding:0 0 56px}
+  .story h2{font-size:clamp(24px,3.4vw,34px);line-height:1.15;margin-bottom:14px}
+  .story p{margin:0 0 14px;max-width:44em}
+  .story ul.chk{list-style:none;margin:6px 0 18px}
+  .story ul.chk li{padding-left:26px;position:relative;margin:6px 0}
+  .story ul.chk li::before{content:"■";position:absolute;left:0}
+  .poster{display:block;width:100%;height:auto;margin:6px 0 22px;border:2px solid var(--ink);background:var(--paper3)}
+  .cap{font-size:12.5px;color:#555;margin:-12px 0 22px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:6px 0 22px}
+  .tile{border:1px solid var(--grey);background:var(--paper3);padding:14px 16px}
+  .tile b{display:block;margin-bottom:4px}
+  .tile span{font-size:14px;color:#444}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 10px}
+  th,td{border:1px solid var(--grey);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--ink);color:var(--paper)}
+  td.me{background:var(--paper2);font-weight:700}
+  .scroll{overflow-x:auto}
+  .note{font-size:12.5px;color:#555}
+  .steps{counter-reset:s;list-style:none;margin:6px 0 18px}
+  .steps li{counter-increment:s;padding:10px 0 10px 44px;border-top:1px dashed var(--grey);position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:30px;height:30px;border:2px solid var(--ink);display:grid;place-items:center;font-weight:700}
+  details{border:1px solid var(--grey);margin-bottom:8px;background:var(--paper3)}
+  summary{cursor:pointer;padding:12px 14px;font-weight:700;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+ "}details[open] summary::before{content:"− "}
+  details p{padding:0 14px 14px;margin:0;font-size:14.5px}
+  /* colonne de droite */
+  .card{border:1px solid var(--grey);background:var(--paper3);padding:16px;margin-bottom:18px}
+  .who{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+  .logo{width:54px;height:54px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);display:grid;place-items:center;font-weight:700;font-size:15px;flex:none}
+  .who b{display:block}.who span{font-size:12.5px;color:#555}
+  .soon{border:2px solid var(--ink);padding:14px;margin-bottom:18px;background:var(--paper3)}
+  .soon b{display:block;font-size:17px;margin-bottom:4px}
+  .soon p{font-size:13.5px;color:#444;margin-bottom:10px}
+  form{display:flex;flex-direction:column;gap:8px}
+  input[type=email]{border:1px solid var(--ink);background:var(--paper);padding:11px;font:400 14.5px "IBM Plex Mono",ui-monospace,Consolas,monospace;color:var(--ink)}
+  input[type=email]:focus{outline:3px solid var(--grey)}
+  .btn{background:var(--ink);color:var(--paper);border:2px solid var(--ink);padding:11px 16px;font:700 14px "IBM Plex Mono",ui-monospace,Consolas,monospace;cursor:pointer}
+  .btn:hover{background:#333}
+  #msg{font-size:13px;min-height:20px;margin-top:4px}
+  .side h3{font-size:15px;margin:4px 0 10px;letter-spacing:.04em}
+  .rw{border:1px solid var(--grey);background:var(--paper3);margin-bottom:14px}
+  .rw svg{display:block;width:100%;height:auto;border-bottom:1px solid var(--grey)}
+  .rw .b{padding:12px 14px}
+  .rw .price{font-size:24px;font-weight:700;line-height:1.1}
+  .rw .price s{font-size:13px;font-weight:400;color:var(--grey);margin-left:6px}
+  .rw .tag{display:inline-block;border:1px solid var(--ink);font-size:11px;font-weight:700;padding:0 6px;margin-bottom:6px}
+  .rw ul{list-style:none;margin:8px 0 0;font-size:13px}
+  .rw li{padding-left:18px;position:relative;margin:3px 0}
+  .rw li::before{content:"■";position:absolute;left:0;font-size:10px;top:3px}
+  .top a{text-decoration:none}
+  .tnav{display:flex;gap:16px}
+  .tnav a:hover{text-decoration:underline}
+  .fl a{margin:0 6px}
+  .lang{display:flex}
+  .lang button{border:1px solid var(--ink);background:none;color:var(--ink);font:700 12px "IBM Plex Mono",ui-monospace,Consolas,monospace;padding:2px 10px;cursor:pointer}
+  .lang button+button{border-left:0}
+  .lang button.on{background:var(--ink);color:var(--paper)}
+  footer{border-top:1px solid var(--grey);padding:28px 24px;text-align:center;font-size:12.5px;color:#555}
+  @media (max-width:1060px){
+    .wrap{grid-template-columns:minmax(0,1fr) 300px}
+    .toc{display:none}
+  }
+  @media (max-width:760px){
+    .wrap{grid-template-columns:1fr;padding:0 16px 60px}
+    .side{position:static;max-height:none;order:-1}
+    .two{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="top"><div class="in">
+  <a class="tb" href="/"><b>RETRO-DECK MD-1</b></a>
+  <span class="tnav"><a href="/">Accueil</a><a href="/docs">Docs</a><a href="https://github.com/Lastexitfromnowhere/retro-deck" rel="noopener">GitHub</a></span>
+  <span><span class="badge">PROJET EN DÉVELOPPEMENT</span> &nbsp; Prototype Windows · pas encore en vente</span>
+  <span class="lang" role="group" aria-label="Langue / Language"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></span>
+</div></div>
+
+<header class="head">
+  <h1>Trois tâches.<br>Une journée plus claire.</h1>
+  <p>Le carnet de travail calme pour Windows. Il planifie ta journée selon ton énergie, te garde sur une seule chose et transforme tes erreurs en révisions. Tes fichiers restent chez toi.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- sommaire -->
+  <nav class="toc" id="toc" aria-label="Chapitres">
+    <a href="#c1">Moins de bruit, plus de focus</a>
+    <a href="#c2">En 60 secondes</a>
+    <a href="#c3">Trois tâches</a>
+    <a href="#c4">Ton énergie décide</a>
+    <a href="#c5">Une seule chose</a>
+    <a href="#c6">De l'erreur à la mémoire</a>
+    <a href="#c7">Écrire sans se battre</a>
+    <a href="#c8">Fermer la journée</a>
+    <a href="#c9">Tes fichiers, chez toi</a>
+    <a href="#c10">Pourquoi un de plus ?</a>
+    <a href="#c11">Où on en est</a>
+    <a href="#c12">Risques et défis</a>
+    <a href="#c13">Questions</a>
+  </nav>
+
+  <!-- récit -->
+  <main class="story">
+
+    <section id="c1">
+      <h2>Moins de bruit. Plus de focus.</h2>
+      <ul class="chk">
+        <li>Plus de liste de 80 lignes qui te regarde.</li>
+        <li>Plus de notifications pour te faire revenir.</li>
+        <li>Plus de compte, de cloud ni d'abonnement.</li>
+      </ul>
+      <svg class="poster" viewBox="0 0 900 520" role="img" aria-label="Affiche : moins de bruit, plus de focus, et la fenêtre de l'application">
+        <rect width="900" height="520" fill="#f4f3ee"/>
+        <rect x="0" y="0" width="360" height="520" fill="#111"/>
+        <g font-family="IBM Plex Mono, monospace" fill="#ecebe6" font-weight="700">
+          <text x="34" y="86" font-size="20" letter-spacing="2">RETRO-DECK MD-1</text>
+          <text x="34" y="190" font-size="46">MOINS</text><text x="34" y="240" font-size="46">DE BRUIT.</text>
+          <text x="34" y="320" font-size="46">PLUS</text><text x="34" y="370" font-size="46">DE FOCUS.</text>
+          <text x="34" y="440" font-size="14" font-weight="400">Hors ligne · Sans compte</text>
+          <text x="34" y="462" font-size="14" font-weight="400">Sans abonnement</text>
+        </g>
+        <!-- fenêtre -->
+        <rect x="408" y="62" width="440" height="396" fill="#111"/>
+        <rect x="396" y="50" width="440" height="396" fill="#ecebe6" stroke="#111" stroke-width="4"/>
+        <g font-family="IBM Plex Mono, monospace" fill="#111">
+          <rect x="396" y="50" width="440" height="30" fill="#111"/>
+          <text x="410" y="71" font-size="14" font-weight="700" fill="#ecebe6">AUJOURD'HUI</text>
+          <text x="820" y="71" font-size="13" text-anchor="end" fill="#ecebe6">LUN 12.10</text>
+          <text x="416" y="112" font-size="13" font-weight="700">PROCHAINE ACTION</text>
+          <text x="416" y="146" font-size="22" font-weight="700">Corriger le bug du login</text>
+          <rect x="416" y="162" width="150" height="38" fill="#111"/><text x="491" y="187" font-size="14" font-weight="700" text-anchor="middle" fill="#ecebe6">► FOCUS 25 MIN</text>
+          <line x1="416" y1="226" x2="816" y2="226" stroke="#111" stroke-width="2"/>
+          <rect x="416" y="246" width="20" height="20" fill="#111"/><text x="448" y="263" font-size="16" text-decoration="line-through">Lire la doc de l'API</text>
+          <rect x="416" y="282" width="20" height="20" fill="none" stroke="#111" stroke-width="3"/><text x="448" y="299" font-size="16" font-weight="700">Corriger le bug du login</text>
+          <rect x="416" y="318" width="20" height="20" fill="none" stroke="#111" stroke-width="3"/><text x="448" y="335" font-size="16">Réviser 12 fiches</text>
+          <text x="416" y="378" font-size="12" font-weight="700">ÉNERGIE</text>
+          <g stroke="#111" stroke-width="2"><rect x="486" y="365" width="34" height="18" fill="#111"/><rect x="526" y="365" width="34" height="18" fill="#111"/><rect x="566" y="365" width="34" height="18" fill="#111"/><rect x="606" y="365" width="34" height="18" fill="#111"/><rect x="646" y="365" width="34" height="18" fill="none"/></g>
+          <text x="416" y="424" font-size="12" fill="#555">1/3 faites · prochaine : focus 25 min</text>
+        </g>
+      </svg>
+      <p><b>Pensé pour ta façon de travailler.</b> RETRO-DECK n'est pas une application de plus à gérer. C'est un carnet qui te dit une chose : <b>voilà ce que tu fais maintenant</b>. Trois tâches par jour, une seule affichée à la fois, le reste attend.</p>
+      <p>Il est conçu pour les personnes qui aiment les outils sobres : développeurs, étudiants en informatique, adeptes du Markdown, et toute personne qui se disperse et veut un cadre calme.</p>
+    </section>
+
+    <section id="c2">
+      <h2>En 60 secondes</h2>
+      <svg class="poster" viewBox="0 0 900 360" role="img" aria-label="Storyboard : planifier, se concentrer, retenir">
+        <rect width="900" height="360" fill="#f4f3ee"/>
+        <g font-family="IBM Plex Mono, monospace" fill="#111">
+          <!-- cadre 1 -->
+          <rect x="24" y="30" width="262" height="270" fill="#ecebe6" stroke="#111" stroke-width="3"/>
+          <rect x="24" y="30" width="262" height="30" fill="#111"/><text x="38" y="51" font-size="14" font-weight="700" fill="#ecebe6">1 · PLANIFIER</text>
+          <text x="40" y="96" font-size="13" font-weight="700">TON ÉNERGIE</text>
+          <g stroke="#111" stroke-width="2"><rect x="40" y="108" width="36" height="34" fill="#111"/><rect x="82" y="108" width="36" height="34" fill="#111"/><rect x="124" y="108" width="36" height="34" fill="#111"/><rect x="166" y="108" width="36" height="34" fill="#111"/><rect x="208" y="108" width="36" height="34" fill="none"/></g>
+          <text x="40" y="186" font-size="13" font-weight="700">ORDRE CONSEILLÉ</text>
+          <text x="40" y="212" font-size="13">1  Tâche dure · 50 min</text><text x="40" y="236" font-size="13">2  Tâche légère · 25 min</text><text x="40" y="260" font-size="13">3  Révision · 15 min</text>
+          <!-- cadre 2 -->
+          <rect x="319" y="30" width="262" height="270" fill="#ecebe6" stroke="#111" stroke-width="3"/>
+          <rect x="319" y="30" width="262" height="30" fill="#111"/><text x="333" y="51" font-size="14" font-weight="700" fill="#ecebe6">2 · FOCUS</text>
+          <text x="450" y="130" font-size="58" font-weight="700" text-anchor="middle">18:42</text>
+          <rect x="345" y="156" width="210" height="14" fill="none" stroke="#111" stroke-width="2"/><rect x="345" y="156" width="130" height="14" fill="#111"/>
+          <text x="450" y="212" font-size="14" text-anchor="middle" font-weight="700">Corriger le bug du login</text>
+          <text x="450" y="244" font-size="12" text-anchor="middle" fill="#555">une seule chose à la fois</text>
+          <!-- cadre 3 -->
+          <rect x="614" y="30" width="262" height="270" fill="#ecebe6" stroke="#111" stroke-width="3"/>
+          <rect x="614" y="30" width="262" height="30" fill="#111"/><text x="628" y="51" font-size="14" font-weight="700" fill="#ecebe6">3 · RETENIR</text>
+          <rect x="640" y="84" width="210" height="130" fill="#f4f3ee" stroke="#111" stroke-width="3"/>
+          <text x="745" y="132" font-size="14" font-weight="700" text-anchor="middle">Pourquoi SameSite=None</text><text x="745" y="152" font-size="14" font-weight="700" text-anchor="middle">est-il rejeté ?</text>
+          <text x="745" y="190" font-size="12" text-anchor="middle" fill="#555">touche pour retourner</text>
+          <text x="745" y="252" font-size="12" text-anchor="middle">revoir · bien · facile</text>
+        </g>
+        <text x="450" y="338" font-family="IBM Plex Mono, monospace" font-size="13" text-anchor="middle" fill="#555">Illustration du principe — vidéo de démonstration à venir</text>
+      </svg>
+      <p>Trois gestes suffisent pour comprendre le produit : <b>planifier</b> ta journée, <b>te concentrer</b> sur une seule tâche, <b>retenir</b> ce que tu apprends. Tout le reste est là pour soutenir ces trois gestes.</p>
+      <p class="note">Une vidéo de démonstration sera publiée avec la campagne. Les affiches de cette page illustrent le fonctionnement du prototype.</p>
+    </section>
+
+    <section id="c3">
+      <h2>Trois tâches. Pas une de plus.</h2>
+      <svg class="poster" viewBox="0 0 900 460" role="img" aria-label="Affiche : un grand 3 et trois tâches">
+        <rect width="900" height="460" fill="#f4f3ee"/>
+        <rect x="52" y="52" width="300" height="356" fill="#111"/>
+        <text x="202" y="300" font-family="IBM Plex Mono, monospace" font-size="270" font-weight="700" fill="#ecebe6" text-anchor="middle">3</text>
+        <g font-family="IBM Plex Mono, monospace" fill="#111">
+          <text x="400" y="110" font-size="15" font-weight="700" letter-spacing="2">AUJOURD'HUI</text>
+          <rect x="400" y="140" width="34" height="34" fill="#111"/><text x="452" y="167" font-size="22" text-decoration="line-through">Lire la doc de l'API</text>
+          <rect x="400" y="200" width="34" height="34" fill="none" stroke="#111" stroke-width="4"/><text x="452" y="227" font-size="22" font-weight="700">Corriger le bug du login</text>
+          <rect x="400" y="260" width="34" height="34" fill="none" stroke="#111" stroke-width="4"/><text x="452" y="287" font-size="22">Réviser 12 fiches</text>
+          <line x1="400" y1="330" x2="848" y2="330" stroke="#111" stroke-width="2" stroke-dasharray="6 6"/>
+          <text x="400" y="372" font-size="16" fill="#555">Le reste attend demain.</text>
+        </g>
+      </svg>
+      <p>Une limite assumée : <b>trois tâches par jour</b>. Pas parce qu'on ne peut pas en faire plus, mais parce qu'une liste courte se termine. L'application t'aide à choisir l'essentiel, puis ne te montre que la prochaine action.</p>
+      <p>Avec l'assistant <b>« Planifier ma journée »</b>, tu écris ce qui compte, tu marques ce qui est dur ou léger, et RETRO-DECK propose un ordre. Si tu as déjà noté une première chose la veille au soir, elle t'attend le matin.</p>
+    </section>
+
+    <section id="c4">
+      <h2>Ton énergie décide de l'ordre.</h2>
+      <svg class="poster" viewBox="0 0 900 420" role="img" aria-label="Affiche : une batterie à quatre barres sur cinq et la suggestion du jour">
+        <rect width="900" height="420" fill="#f4f3ee"/>
+        <g stroke="#111" stroke-width="8" fill="none"><rect x="70" y="100" width="440" height="220"/><path d="M510 168h36v84h-36"/></g>
+        <g fill="#111"><rect x="96" y="126" width="86" height="168"/><rect x="194" y="126" width="86" height="168"/><rect x="292" y="126" width="86" height="168"/><rect x="390" y="126" width="86" height="168"/></g>
+        <g font-family="IBM Plex Mono, monospace" fill="#111">
+          <text x="600" y="132" font-size="14" font-weight="700" letter-spacing="2">NIVEAU DE BATTERIE</text>
+          <text x="600" y="190" font-size="64" font-weight="700">4/5</text>
+          <text x="600" y="232" font-size="15">Bonne énergie.</text><text x="600" y="256" font-size="15" font-weight="700">Attaque le plus dur</text><text x="600" y="280" font-size="15" font-weight="700">en premier.</text>
+          <text x="70" y="378" font-size="14" fill="#555">Un tap, de 1 à 5. Aucun capteur. Rien ne quitte ton PC.</text>
+        </g>
+      </svg>
+      <p>Tu touches un niveau de 1 à 5. RETRO-DECK s'en sert pour ordonner ta journée : <b>énergie haute</b>, le plus dur d'abord ; <b>énergie basse</b>, le léger d'abord et le difficile pour ton meilleur moment.</p>
+      <p>Avec le temps, l'application apprend, <b>uniquement sur ton ordinateur</b>, à quel moment de la journée tu es en forme. C'est un ressenti que tu déclares toi-même : pas de montre connectée, pas de données de santé, aucun diagnostic.</p>
+    </section>
+
+    <section id="c5">
+      <h2>Une seule chose à la fois.</h2>
+      <svg class="poster" viewBox="0 0 900 420" role="img" aria-label="Affiche : le mode focus avec un minuteur">
+        <rect width="900" height="420" fill="#111"/>
+        <g font-family="IBM Plex Mono, monospace" fill="#ecebe6" text-anchor="middle">
+          <text x="450" y="86" font-size="16" letter-spacing="4" font-weight="700">FOCUS</text>
+          <text x="450" y="150" font-size="26" font-weight="700">Corriger le bug du login</text>
+          <text x="450" y="290" font-size="150" font-weight="700">25:00</text>
+          <rect x="190" y="320" width="520" height="22" fill="none" stroke="#ecebe6" stroke-width="3"/><rect x="190" y="320" width="190" height="22" fill="#ecebe6"/>
+          <text x="450" y="388" font-size="15" fill="#aaa" font-weight="400">Pas de notification. Pas de son. Tout le reste disparaît.</text>
+        </g>
+      </svg>
+      <p>Le mode focus affiche <b>une tâche et un minuteur</b>, rien d'autre. Choisis 15, 25, 50 ou 90 minutes. Pendant que tu travailles ailleurs dans l'application, un petit compteur reste visible dans le menu.</p>
+    </section>
+
+    <section id="c6">
+      <h2>De l'erreur à la mémoire.</h2>
+      <svg class="poster" viewBox="0 0 900 400" role="img" aria-label="Affiche : bloqué, débloqué, fiche de révision">
+        <rect width="900" height="400" fill="#f4f3ee"/>
+        <g font-family="IBM Plex Mono, monospace" fill="#111" text-anchor="middle">
+          <rect x="40" y="90" width="230" height="200" fill="none" stroke="#111" stroke-width="4"/>
+          <text x="155" y="140" font-size="15" font-weight="700" letter-spacing="2">BLOQUÉ</text>
+          <text x="155" y="190" font-size="14">Le cookie de session</text><text x="155" y="212" font-size="14">n'est jamais écrit.</text>
+          <path d="M280 190h60M326 174l16 16-16 16" stroke="#111" stroke-width="5" fill="none"/>
+          <rect x="350" y="90" width="230" height="200" fill="#111"/>
+          <text x="465" y="140" font-size="15" font-weight="700" letter-spacing="2" fill="#ecebe6">DÉBLOQUÉ</text>
+          <text x="465" y="190" font-size="14" fill="#ecebe6">SameSite=None</text><text x="465" y="212" font-size="14" fill="#ecebe6">exige Secure.</text>
+          <path d="M590 190h60M636 174l16 16-16 16" stroke="#111" stroke-width="5" fill="none"/>
+          <rect x="660" y="90" width="200" height="200" fill="#ecebe6" stroke="#111" stroke-width="4"/>
+          <text x="760" y="140" font-size="15" font-weight="700" letter-spacing="2">FICHE</text>
+          <text x="760" y="186" font-size="13">Pourquoi SameSite=None</text><text x="760" y="206" font-size="13">est-il rejeté ?</text>
+          <text x="760" y="252" font-size="12" fill="#555">revue dans 1, 3, 8 jours</text>
+          <text x="450" y="352" font-size="15" fill="#555">Tu notes. Tu sélectionnes. Tu retiens.</text>
+        </g>
+      </svg>
+      <p>C'est le cœur de RETRO-DECK. Quand tu résous un problème, tu écris la solution dans ta note. Tu la sélectionnes, <b>Ctrl+J</b>, et elle devient une <b>fiche de révision</b> qui revient au bon moment (révision espacée).</p>
+      <ul class="chk">
+        <li>Une fiche = un fichier <code>.md</code> lisible partout.</li>
+        <li>Tu peux <b>importer tes propres fichiers .md</b> en fiches, un par un ou un dossier entier.</li>
+        <li>Une bibliothèque liste toutes tes fiches, avec un filtre.</li>
+      </ul>
+    </section>
+
+    <section id="c7">
+      <h2>Écrire sans se battre.</h2>
+      <svg class="poster" viewBox="0 0 900 460" role="img" aria-label="Affiche : l'éditeur plein écran avec sa barre de commandes façon nano">
+        <rect width="900" height="460" fill="#ecebe6"/>
+        <rect x="30" y="30" width="840" height="400" fill="#f4f3ee" stroke="#111" stroke-width="4"/>
+        <g font-family="IBM Plex Mono, monospace" fill="#111">
+          <text x="56" y="66" font-size="13" fill="#555">2026-10-12-bloque.md</text>
+          <text x="56" y="112" font-size="26" font-weight="700"># Bug du login</text>
+          <text x="56" y="152" font-size="18">Après la connexion, la page recharge en boucle.</text>
+          <text x="56" y="184" font-size="18">- [x] Reproduire l'erreur en local</text>
+          <text x="56" y="216" font-size="18">- [ ] Vérifier le domaine du cookie</text>
+          <text x="56" y="256" font-size="18">## Solution (à garder)</text>
+          <text x="56" y="288" font-size="18">res.cookie('sid', id, { secure: true });</text>
+          <rect x="30" y="352" width="840" height="78" fill="#111"/>
+          <g fill="#ecebe6" font-size="14"><text x="56" y="382"><tspan font-weight="700">^O</tspan> Enregistrer   <tspan font-weight="700">^W</tspan> Chercher   <tspan font-weight="700">^K</tspan> Couper ligne   <tspan font-weight="700">^U</tspan> Coller   <tspan font-weight="700">^G</tspan> Aide</text>
+          <text x="56" y="410"><tspan font-weight="700">^X</tspan> Fermer   <tspan font-weight="700">^L</tspan> Aller à   <tspan font-weight="700">^R</tspan> Insérer fichier   <tspan font-weight="700">^J</tspan> → Fiche   <tspan font-weight="700">^E</tspan> Lecture</text></g>
+        </g>
+      </svg>
+      <p>Un éditeur plein écran, sobre, qui sauvegarde tout seul. Les raccourcis rappellent <b>nano</b> : <code>Ctrl+O</code> enregistrer, <code>Ctrl+K</code> et <code>Ctrl+U</code> couper et coller une ligne, <code>Ctrl+W</code> chercher, <code>Ctrl+L</code> aller à une ligne. Une barre de commandes te les rappelle en bas.</p>
+      <p>Tu peux <b>ouvrir n'importe quel fichier .md</b> de ton ordinateur, parcourir un dossier, ou glisser un fichier dans la fenêtre. Des gabarits te lancent : journal du jour, bloqué/débloqué, revue de semaine, cours, fiche de lecture, réunion.</p>
+    </section>
+
+    <section id="c8">
+      <h2>Vider sa tête. Fermer sa journée.</h2>
+      <svg class="poster" viewBox="0 0 900 380" role="img" aria-label="Affiche : vidage de tête puis bilan du soir">
+        <rect width="900" height="380" fill="#111"/>
+        <g font-family="IBM Plex Mono, monospace" fill="#ecebe6">
+          <text x="60" y="80" font-size="15" font-weight="700" letter-spacing="3">LE SOIR · 60 SECONDES</text>
+          <text x="60" y="130" font-size="16">1  Une victoire</text>
+          <text x="60" y="164" font-size="16">2  Un blocage</text>
+          <text x="60" y="198" font-size="16">3  La première chose pour demain</text>
+          <line x1="60" y1="226" x2="500" y2="226" stroke="#ecebe6" stroke-width="2" stroke-dasharray="6 6"/>
+          <text x="60" y="262" font-size="14" fill="#aaa">Elle t'attendra demain matin.</text>
+          <text x="60" y="320" font-size="22" font-weight="700">À demain.</text>
+        </g>
+        <path d="M740 80a110 110 0 1 0 60 200A96 96 0 0 1 740 80z" fill="#ecebe6"/>
+      </svg>
+      <p>Avant de te coucher avec trente choses en tête : le <b>vidage de tête</b> te laisse tout écrire sans trier, puis chaque ligne devient une tâche, une note, une idée ou la poubelle.</p>
+      <p>Le <b>bilan du soir</b> dure une minute : tes chiffres du jour (tâches, minutes de focus, fiches révisées), une victoire, un blocage, et ta première chose pour demain. Il est enregistré dans ton coffre comme une simple note.</p>
+    </section>
+
+    <section id="c9">
+      <h2>Tes fichiers restent chez toi.</h2>
+      <svg class="poster" viewBox="0 0 900 380" role="img" aria-label="Affiche : un dossier de fichiers .md sur ton ordinateur">
+        <rect width="900" height="380" fill="#f4f3ee"/>
+        <g fill="none" stroke="#111" stroke-width="5"><path d="M60 80h200l40 50h460v220H60z"/><path d="M60 150h700"/></g>
+        <g font-family="IBM Plex Mono, monospace" fill="#111">
+          <text x="92" y="116" font-size="14" font-weight="700">Documents / RETRO-DECK</text>
+          <text x="92" y="196" font-size="19">notes/   2026-10-12-bloque.md</text>
+          <text x="92" y="232" font-size="19">cards/   pourquoi-samesite.md</text>
+          <text x="92" y="268" font-size="19">data/    plan, énergie (JSON)</text>
+          <text x="92" y="318" font-size="15" fill="#555">Des fichiers ordinaires. Ouvre-les avec n'importe quoi.</text>
+        </g>
+      </svg>
+      <ul class="chk">
+        <li><b>Pas de compte</b> à créer.</li>
+        <li><b>Pas de cloud obligatoire</b> : ça fonctionne hors ligne.</li>
+        <li><b>Pas d'abonnement</b> : un paiement unique est prévu.</li>
+        <li><b>Pas de piège de sortie</b> : tout est en Markdown et JSON. Si le projet s'arrête, tes fichiers restent lisibles.</li>
+        <li><b>Aucune IA</b> dans le produit, et aucun accès à tes mails ou calendriers.</li>
+      </ul>
+    </section>
+
+    <section id="c10">
+      <h2>Pourquoi un de plus ?</h2>
+      <p>Les bons outils existent. Aucun ne réunit un planning guidé, une vraie règle de simplicité, tes notes en fichiers ouverts et un paiement unique.</p>
+      <div class="scroll"><table>
+        <tr><th></th><th>RETRO-DECK</th><th>Planificateurs en abonnement</th><th>Notes locales gratuites + plugins</th></tr>
+        <tr><td>Paiement</td><td class="me">Une fois (prévu)</td><td>Mensuel ou annuel</td><td>Gratuit, à assembler</td></tr>
+        <tr><td>Compte requis</td><td class="me">Non</td><td>Oui</td><td>Non</td></tr>
+        <tr><td>Planning guidé selon l'énergie</td><td class="me">Oui</td><td>Partiel</td><td>Non</td></tr>
+        <tr><td>Une seule chose affichée</td><td class="me">Oui</td><td>Parfois</td><td>Par plugin</td></tr>
+        <tr><td>Erreurs → fiches de révision</td><td class="me">Intégré</td><td>Non</td><td>Plugins</td></tr>
+        <tr><td>Notes en fichiers .md</td><td class="me">Oui</td><td>Non</td><td>Oui</td></tr>
+        <tr><td>Prêt à l'emploi</td><td class="me">Oui</td><td>Oui</td><td>Configuration longue</td></tr>
+      </table></div>
+      <p class="note">Comparaison qualitative fondée sur les pages publiques de produits existants, à revérifier avant publication. Les offres des autres évoluent.</p>
+    </section>
+
+    <section id="c11">
+      <h2>Où on en est.</h2>
+      <ol class="steps">
+        <li><b>Prototype fonctionnel (fait).</b> Application Windows qui se lance, avec planning, focus, éditeur, fiches, bilan et import de fichiers.</li>
+        <li><b>Mise au point.</b> Tests avec de vrais utilisateurs, finitions, polices embarquées.</li>
+        <li><b>Installeur Windows et licence.</b> Une licence perpétuelle vérifiable hors ligne.</li>
+        <li><b>Lancement.</b> Date à annoncer, une fois les deux étapes précédentes validées.</li>
+      </ol>
+      <p>La logique de l'application est écrite dans une bibliothèque indépendante de l'interface, testée automatiquement. C'est ce qui permettra, plus tard, d'envisager d'autres supports. <b>Rien n'est promis à ce stade au-delà de la version Windows.</b></p>
+    </section>
+
+    <section id="c12">
+      <h2>Risques et défis.</h2>
+      <p>Une campagne honnête dit ce qui peut mal tourner.</p>
+      <div class="two">
+        <div class="tile"><b>Un produit encore jeune</b><span>C'est un prototype. Des défauts de jeunesse sont probables avant la version publique.</span></div>
+        <div class="tile"><b>Des alternatives gratuites</b><span>Il existe d'excellents éditeurs Markdown gratuits. RETRO-DECK doit prouver que le planning guidé et la boucle erreurs → fiches valent un paiement.</span></div>
+        <div class="tile"><b>Windows d'abord</b><span>macOS et Linux sont envisagés, sans engagement ni date.</span></div>
+        <div class="tile"><b>Un projet indépendant</b><span>Il est développé par une petite équipe. Les délais peuvent bouger, et nous le dirons.</span></div>
+      </div>
+    </section>
+
+    <section id="c13">
+      <h2>Questions.</h2>
+      <details><summary>C'est disponible ?</summary><p>Pas encore. C'est un prototype Windows en développement. La liste d'attente sert à mesurer l'intérêt et à recruter les premiers testeurs.</p></details>
+      <details><summary>Y a-t-il de l'IA dedans ?</summary><p>Non. Aucune fonction d'IA, aucune donnée envoyée à un service d'IA.</p></details>
+      <details><summary>« No cloud », ça veut dire jamais de réseau ?</summary><p>Le fonctionnement principal est entièrement local et aucun compte n'est requis. Tout composant optionnel qui utiliserait le réseau serait clairement indiqué.</p></details>
+      <details><summary>L'application est-elle faite pour le TDAH ?</summary><p>Elle est pensée pour être calme et limitée : peu de choix, pas de notifications. Ce n'est pas un dispositif médical et elle ne promet aucun effet thérapeutique.</p></details>
+      <details><summary>Et si le projet s'arrête ?</summary><p>L'application fonctionne sans serveur ni vérification en ligne obligatoire, et tes notes sont des fichiers .md que n'importe quel éditeur ouvre.</p></details>
+      <details><summary>Combien ça coûtera ?</summary><p>Les paliers à droite sont indicatifs et non définitifs. Rien n'est à payer aujourd'hui.</p></details>
+    </section>
+
+  </main>
+
+  <!-- colonne de droite -->
+  <aside class="side">
+    <div class="card">
+      <div class="who"><div class="logo">RD</div><div><b>RETRO-DECK MD-1</b><span>Projet LastParadox · premier lancement</span></div></div>
+      <p style="font-size:13.5px;color:#444">Un carnet de travail minimaliste pour Windows : planifier, se concentrer, retenir. Local et sans abonnement.</p>
+    </div>
+
+    <div class="soon" id="liste">
+      <b>Campagne à venir</b>
+      <p>Laisse ton email : un seul message au lancement de la bêta, rien d'autre.</p>
+      <form id="wl">
+        <input type="email" name="email" placeholder="ton@email.com" required aria-label="Adresse email">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <button class="btn" type="submit">ME PRÉVENIR</button>
+      </form>
+      <div id="msg" role="status"></div>
+      <p class="note" style="margin-top:8px">Ton email sert uniquement à te prévenir au lancement de la bêta. Il est supprimé sur simple demande (support@lastparadox.xyz).</p>
+    </div>
+
+    <h3>PALIERS ENVISAGÉS</h3>
+    <p class="note" style="margin-bottom:12px">Indicatifs, non définitifs. Rien n'est vendu aujourd'hui.</p>
+
+    <div class="rw">
+      <svg viewBox="0 0 320 120" aria-hidden="true"><rect width="320" height="120" fill="#ecebe6"/><g font-family="IBM Plex Mono, monospace" fill="#111" text-anchor="middle"><text x="160" y="66" font-size="30" font-weight="700">MERCI</text><text x="160" y="92" font-size="12">ton nom dans CREDITS.txt</text></g></svg>
+      <div class="b"><div class="price">5 €</div><b>Soutien</b>
+        <ul><li>Ton nom dans le fichier de crédits</li><li>Le journal de développement</li></ul></div>
+    </div>
+
+    <div class="rw">
+      <svg viewBox="0 0 320 120" aria-hidden="true"><rect width="320" height="120" fill="#111"/><g font-family="IBM Plex Mono, monospace" fill="#ecebe6" text-anchor="middle"><text x="160" y="58" font-size="34" font-weight="700">EARLY BIRD</text><text x="160" y="88" font-size="13">quantité limitée</text></g></svg>
+      <div class="b"><span class="tag">LIMITÉ</span><div class="price">14 €<s>19 €</s></div><b>Licence perpétuelle v1</b>
+        <ul><li>Toutes les fonctions locales</li><li>Accès à la bêta</li><li>Mises à jour correctives</li><li>Export en fichiers ouverts</li></ul></div>
+    </div>
+
+    <div class="rw">
+      <svg viewBox="0 0 320 120" aria-hidden="true"><rect width="320" height="120" fill="#ecebe6"/><g font-family="IBM Plex Mono, monospace" fill="#111" text-anchor="middle"><rect x="108" y="22" width="104" height="76" fill="none" stroke="#111" stroke-width="4"/><text x="160" y="72" font-size="36" font-weight="700">v1</text></g></svg>
+      <div class="b"><div class="price">19 €</div><b>Licence</b>
+        <ul><li>Licence perpétuelle de la v1</li><li>Aucun compte, aucun abonnement</li><li>Fonctionne hors ligne</li></ul></div>
+    </div>
+
+    <div class="rw">
+      <svg viewBox="0 0 320 120" aria-hidden="true"><rect width="320" height="120" fill="#ecebe6"/><g font-family="IBM Plex Mono, monospace" fill="#111" text-anchor="middle"><rect x="84" y="26" width="72" height="68" fill="none" stroke="#111" stroke-width="4"/><rect x="164" y="26" width="72" height="68" fill="#111"/><text x="120" y="70" font-size="28" font-weight="700">v1</text><text x="200" y="70" font-size="28" font-weight="700" fill="#ecebe6">v1</text></g></svg>
+      <div class="b"><div class="price">29 €</div><b>Duo</b>
+        <ul><li>2 licences perpétuelles, dont une à offrir</li><li>Accès à la bêta</li><li>Ton nom dans le fichier de crédits</li></ul></div>
+    </div>
+  </aside>
+
+</div>
+
+<footer>
+  <p>RETRO-DECK MD-1 · un projet LastParadox · Fait pour durer : fichiers ouverts, licence unique.<br>
+  Prototype en développement. Les affiches de cette page sont des illustrations ; les prix sont indicatifs.</p>
+  <p class="fl" style="margin-top:10px"><a href="/terms">Conditions</a> · <a href="/privacy">Confidentialité</a> · <a href="/legal">Mentions légales</a> · <a href="https://github.com/Lastexitfromnowhere/retro-deck" rel="noopener">GitHub</a> · <a href="mailto:support@lastparadox.xyz">support@lastparadox.xyz</a></p>
+</footer>
+
+<script src="/assets/campagne-i18n.js"></script>
+<script src="/assets/campagne.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+# E-paper design charter / Charte e-paper
+
+Independent from the 1980 charter of other LastParadox projects. / Indépendante de la charte 1980 des autres projets LastParadox.
+
+## EN
+
+**Spirit**: an electronic-ink notebook. Calm, flat, high contrast, nothing that blinks.
+
+| Token | Value | Use |
+|---|---|---|
+| Ink | `#111111` | Text, strokes, filled blocks |
+| Paper | `#ECEBE6` | Page background |
+| Paper 2 | `#E2E1DB` | Hover, selected rows |
+| Paper 3 | `#F4F3EE` | Cards and panels |
+| Grey | `#8A8984` | Thin strokes and secondary lines only |
+
+- **No accent colour.** No green, no gradient, no shadow blur. A hard offset shadow is allowed on rare panels.
+- **One monospace family**: IBM Plex Mono where available, otherwise the system stack (`ui-monospace`, Cascadia Mono, SF Mono, Menlo, Consolas). Two weights: 400 and 700. No font is loaded from a third party.
+- **Strokes**: 1 px grey for structure, 2 px ink for emphasis, 3 px for selected states.
+- **Active state** = bold text + a left bar, not a filled black block.
+- **Icons**: 48×48 grid, 3 px square-cap strokes, solid fills only in ink. Never emoji (use `►` `◄`, not `▶` `◀`, which render as colour emoji on some systems).
+- **Motion**: stepped or none. No bouncing, no fading.
+- **Posters**: large flat compositions, one idea per poster, ink blocks against paper.
+- **Dark variant ("ink")**: ink and paper swap; same rules.
+
+## FR
+
+**Esprit** : un carnet à encre électronique. Calme, à plat, fort contraste, rien qui clignote.
+
+- **Aucune couleur d'accent.** Pas de vert, pas de dégradé, pas d'ombre floutée. Une ombre dure décalée est tolérée sur de rares panneaux.
+- **Une seule famille monospace** : IBM Plex Mono si disponible, sinon la pile système. Deux graisses : 400 et 700. Aucune police chargée chez un tiers.
+- **Traits** : 1 px gris pour la structure, 2 px encre pour l'emphase, 3 px pour les états sélectionnés.
+- **État actif** = texte gras + barre à gauche, pas un bloc noir plein.
+- **Icônes** : grille 48×48, traits de 3 px à bouts carrés, aplats uniquement en encre. Jamais d'emoji (utiliser `►` `◄`, pas `▶` `◀`).
+- **Mouvement** : par paliers ou aucun.
+- **Affiches** : grandes compositions à plat, une idée par affiche, blocs d'encre sur papier.
+- **Variante sombre (« encre »)** : encre et papier s'inversent ; mêmes règles.

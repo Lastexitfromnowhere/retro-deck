@@ -1,0 +1,101 @@
+/* RETRO-DECK MD-1 — charte e-paper (indépendante de la charte 1980 de LastParadox)
+   Principes : noir encre, papier blanc cassé, gris pour les traits fins ; une seule famille monospace ;
+   aucune couleur d'accent, aucune police externe, aucune image tierce. */
+:root{--ink:#111;--paper:#ecebe6;--paper2:#e2e1db;--paper3:#f4f3ee;--grey:#8a8984;--line:#cfcec8;--w:1120px;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--mono);-webkit-text-size-adjust:100%}
+a{color:inherit}
+img,svg{max-width:100%}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+
+/* langue : un seul des deux blocs est visible */
+html[data-lang="fr"] .en{display:none!important}
+html[data-lang="en"] .fr{display:none!important}
+
+/* navigation */
+.nav{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--grey)}
+.nav .in{max-width:var(--w);margin:0 auto;padding:0 24px;min-height:56px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.brand{font-weight:700;letter-spacing:.04em;text-decoration:none;font-size:15px}
+.brand i{font-style:normal;background:var(--ink);color:var(--paper);padding:0 6px;margin-left:6px}
+.nav nav{display:flex;gap:18px;flex:1;flex-wrap:wrap;font-size:14px}
+.nav nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.nav nav a:hover,.nav nav a[aria-current="page"]{border-bottom-color:var(--ink)}
+.lang{display:flex}
+.lang button{border:1px solid var(--ink);background:none;color:var(--ink);font:700 12px var(--mono);padding:2px 10px;cursor:pointer}
+.lang button+button{border-left:0}
+.lang button.on{background:var(--ink);color:var(--paper)}
+
+/* boutons et formulaires */
+.btn{display:inline-block;background:var(--ink);color:var(--paper);border:2px solid var(--ink);padding:11px 20px;font:700 14px var(--mono);text-decoration:none;cursor:pointer}
+.btn:hover{background:#333;border-color:#333}
+.btn.o{background:transparent;color:var(--ink);border-color:var(--grey)}
+.btn.o:hover{background:var(--paper2)}
+.badge{display:inline-block;border:1px solid var(--ink);padding:1px 10px;font-weight:700;font-size:12px}
+input[type=email],input[type=text]{border:1px solid var(--ink);background:var(--paper);padding:11px;font:400 15px var(--mono);color:var(--ink);min-width:0}
+input:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--grey);outline-offset:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+form.wl{display:flex;gap:10px;flex-wrap:wrap}
+form.wl input[type=email]{flex:1 1 220px}
+.msg{font-size:14px;min-height:22px;margin-top:10px}
+.small{font-size:12.5px;color:#555}
+
+/* accueil */
+.hero{padding:64px 0 56px;border-bottom:1px solid var(--grey)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+h1{font-size:clamp(32px,5vw,54px);line-height:1.08;letter-spacing:-.01em}
+.lead{margin:20px 0 26px;font-size:17px;max-width:30em}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero svg{width:100%;height:auto;display:block}
+.band{background:var(--ink);color:var(--paper);padding:13px 0;text-align:center;font-weight:700;letter-spacing:.08em;font-size:clamp(12px,2.2vw,17px)}
+section.s{padding:64px 0;border-bottom:1px solid var(--grey)}
+h2{font-size:clamp(24px,3.4vw,34px);line-height:1.15;margin-bottom:10px}
+.sub{max-width:38em;margin-bottom:30px;color:#333}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{border:1px solid var(--grey);background:var(--paper3);padding:20px}
+.card svg{width:48px;height:48px;margin-bottom:10px}
+.card h3{font-size:17px;margin-bottom:6px}
+.card p{font-size:14.5px;color:#333}
+.card a.more{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:700}
+.status{border:2px solid var(--ink);background:var(--paper3);padding:20px}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.box{border:2px solid var(--ink);padding:24px;background:var(--paper3)}
+ul.tick{list-style:none;margin:10px 0}
+ul.tick li{padding-left:26px;position:relative;margin:7px 0}
+ul.tick li::before{content:"■";position:absolute;left:0}
+
+/* pages de texte : docs, conditions, confidentialité */
+.page{max-width:var(--w);margin:0 auto;padding:44px 24px 80px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px;align-items:start}
+.page.solo{grid-template-columns:minmax(0,820px)}
+.side{position:sticky;top:76px;font-size:13px;line-height:1.35;max-height:calc(100vh - 100px);overflow:auto}
+.side a{display:block;text-decoration:none;padding:7px 0 7px 12px;border-left:3px solid var(--line);color:#444}
+.side a:hover{color:var(--ink);border-left-color:var(--ink)}
+.prose h1{font-size:clamp(28px,4vw,40px);margin-bottom:6px}
+.prose .upd{font-size:13px;color:#555;margin-bottom:22px}
+.prose h2{font-size:22px;margin:38px 0 10px;padding-top:6px}
+.prose h3{font-size:17px;margin:22px 0 6px}
+.prose p{margin:0 0 14px;max-width:46em}
+.prose ul,.prose ol{margin:0 0 16px 22px;max-width:46em}
+.prose li{margin:5px 0}
+.prose code{background:var(--paper2);border:1px solid var(--line);padding:0 5px;font-size:.92em}
+.prose pre{border:1px solid var(--ink);background:var(--paper3);padding:14px 16px;overflow:auto;margin:0 0 18px;font-size:13.5px;line-height:1.55}
+.prose pre code{background:none;border:0;padding:0}
+kbd{border:1px solid var(--grey);background:var(--paper3);padding:0 6px;font:700 .88em var(--mono)}
+.prose table{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 20px}
+.prose th,.prose td{border:1px solid var(--grey);padding:8px 10px;text-align:left;vertical-align:top}
+.prose th{background:var(--ink);color:var(--paper)}
+.callout{border:2px solid var(--ink);padding:14px 16px;background:var(--paper3);margin:0 0 20px;max-width:46em}
+.scroll{overflow-x:auto}
+
+footer.foot{border-top:1px solid var(--grey);padding:30px 24px 44px;font-size:13px;color:#444}
+footer.foot .in{max-width:var(--w);margin:0 auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer.foot nav{display:flex;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero .wrap,.price,.grid3,.grid2{grid-template-columns:1fr}
+  .page{grid-template-columns:1fr}
+  .side{position:static;max-height:none}
+  .hero{padding:40px 0}
+}

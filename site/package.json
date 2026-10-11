@@ -1,0 +1,8 @@
+{
+  "name": "retrodeck-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site RETRO-DECK MD-1 : pages statiques FR/EN + liste d'attente (Cloudflare Worker, D1, KV)",
+  "scripts": { "dev": "wrangler dev", "deploy": "wrangler deploy" },
+  "devDependencies": { "wrangler": "^4" }
+}

@@ -1,0 +1,28 @@
+# Copie ce fichier en wrangler.toml et remplace les valeurs entre <...>.
+name = "retrodeck-site"
+main = "src/index.js"
+compatibility_date = "2026-08-20"
+account_id = "<ton account id Cloudflare>"
+
+workers_dev = true
+routes = [
+  { pattern = "<ton.sous-domaine.exemple.com>", custom_domain = true }
+]
+
+# Pages statiques ; le Worker ne reçoit que /api/*
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+not_found_handling = "404-page"
+
+# D1 : liste d'attente (créer avec : wrangler d1 create retrodeck-waitlist, puis wrangler d1 execute ... --file schema.sql)
+[[d1_databases]]
+binding = "DB"
+database_name = "retrodeck-waitlist"
+database_id = "<id de la base D1>"
+
+# KV : anti-spam (hash d'IP éphémère, TTL 60 s, jamais conservé)
+[[kv_namespaces]]
+binding = "RL"
+id = "<id du namespace KV>"
