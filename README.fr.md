@@ -5,7 +5,7 @@ Local. Hors ligne. Sans compte. Sans abonnement. Sans IA.
 
 [English](README.md) · [Français](README.fr.md) · [Site](https://retrodeck.lastparadox.dev) · [Page de campagne](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
-> **Statut (octobre 2026) : prototype en développement.** Un prototype Windows fonctionnel existe. Il n'est pas encore distribué et rien ne peut être acheté. Les prix et dates mentionnés sont indicatifs.
+> **Statut (octobre 2026) : accès anticipé, version 0.1 pour Windows.** L'application est en vente en achat unique, sans abonnement ; elle va évoluer avec les retours des premiers utilisateurs.
 > Ce dépôt est la vitrine publique : documentation, charte graphique et source du site web. **L'application elle-même est propriétaire et n'est pas incluse ici.**
 
 ---
@@ -45,6 +45,8 @@ Détails : [documentation](docs/fr/features.md) · [raccourcis](docs/fr/shortcut
 - **Aucune IA.** Aucune fonction d'IA, aucun accès à tes mails ou calendriers.
 
 ## Feuille de route
+
+La feuille de route détaillée, avec l'ambition d'un boîtier matériel (écran e-paper tactile + ESP32), est sur le [site](https://retrodeck.lastparadox.dev/#roadmap).
 
 Prévu, sans date : polices embarquées et finitions, installeur Windows et licence perpétuelle vérifiable hors ligne, retrait d'une fiche avec confirmation, import d'un calendrier en lecture seule (lien `.ics`), validation de l'intérêt via une liste d'attente.
 Idées, sans engagement : versions macOS et Linux.

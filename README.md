@@ -5,7 +5,7 @@ Local. Offline. No account. No subscription. No AI.
 
 [English](README.md) · [Français](README.fr.md) · [Website](https://retrodeck.lastparadox.dev) · [Campaign page](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
-> **Status (October 2026): prototype in development.** A working Windows prototype exists. It is not distributed yet and nothing can be bought. Prices and dates mentioned anywhere are indicative.
+> **Status (October 2026): early access, version 0.1 for Windows.** The app is on sale as a one-time purchase, no subscription; it will evolve with the first users' feedback.
 > This repository is the public showcase: documentation, design charter and the source of the website. **The application itself is proprietary and is not included here.**
 
 ---
@@ -45,6 +45,8 @@ Full details: [documentation](docs/en/features.md) · [shortcuts](docs/en/shortc
 - **No AI.** No AI feature, and no access to your email or calendars.
 
 ## Roadmap
+
+The detailed roadmap, including the ambition of a hardware device (touch e-paper screen + ESP32), is on the [website](https://retrodeck.lastparadox.dev/#roadmap).
 
 Planned, with no date: bundled fonts and polish, a Windows installer and an offline-verifiable perpetual license, removing a card with confirmation, read-only calendar import (`.ics` link), validation of interest through a waitlist.
 Ideas, not commitments: macOS and Linux versions.

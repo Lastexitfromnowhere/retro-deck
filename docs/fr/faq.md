@@ -2,9 +2,9 @@
 
 [← README](../../README.fr.md) · [English](../en/faq.md)
 
-**C'est disponible ?** Pas encore. C'est un prototype Windows en développement. La liste d'attente sert à mesurer l'intérêt et à recruter les premiers testeurs.
+**C'est disponible ?** Oui, en accès anticipé : la version 0.1 pour Windows est en vente en achat unique.
 
-**Combien ça coûtera ?** Rien n'est en vente. Les paliers de la page campagne sont indicatifs et non définitifs.
+**Combien ça coûte ?** Voir les offres sur la [page campagne](https://retrodeck.lastparadox.dev/campagne#paliers). Paiement unique, sans abonnement.
 
 **Y a-t-il de l'IA dedans ?** Non. Aucune fonction d'IA, aucune donnée envoyée à un service d'IA.
 

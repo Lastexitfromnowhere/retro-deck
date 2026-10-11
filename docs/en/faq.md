@@ -2,9 +2,9 @@
 
 [← README](../../README.md) · [Français](../fr/faq.md)
 
-**Is it available?** Not yet. It is a Windows prototype in development. The waitlist measures interest and recruits the first testers.
+**Is it available?** Yes, in early access: version 0.1 for Windows is on sale as a one-time purchase.
 
-**How much will it cost?** Nothing is for sale. The tiers on the campaign page are indicative and not final.
+**How much does it cost?** See the offers on the [campaign page](https://retrodeck.lastparadox.dev/campagne#paliers). One-time payment, no subscription.
 
 **Is there AI in it?** No. No AI feature, and no data sent to any AI service.
 

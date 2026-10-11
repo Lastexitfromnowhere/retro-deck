@@ -99,3 +99,28 @@ footer.foot nav{display:flex;gap:16px;flex-wrap:wrap}
   .side{position:static;max-height:none}
   .hero{padding:40px 0}
 }
+
+/* feuille de route */
+.rm-legend{font-size:13px;margin:-14px 0 18px;color:#444}
+.rm{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--ink);background:var(--paper3)}
+.rm-col{padding:18px 18px 20px;border-right:1px solid var(--grey);position:relative}
+.rm-col:last-child{border-right:0}
+.rm-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;border:1px solid var(--ink);padding:0 8px;margin-bottom:10px}
+.rm-col.s-now{background:var(--ink);color:var(--paper)}
+.rm-col.s-now .rm-tag{border-color:var(--paper)}
+.rm-col.s-hw{background:repeating-linear-gradient(135deg,transparent 0 9px,rgba(17,17,17,.06) 9px 10px)}
+.rm-col h3{font-size:18px;line-height:1.2;margin-bottom:12px}
+.rm-list{list-style:none;font-size:13.5px;line-height:1.5}
+.rm-list li{position:relative;padding:5px 0 5px 24px;border-top:1px dashed var(--grey)}
+.rm-col.s-now .rm-list li{border-top-color:#555}
+.rm-list li::before{position:absolute;left:0;font-weight:700}
+.rm-list li.done::before{content:"■"}
+.rm-list li.wip::before{content:"▣"}
+.rm-list li.plan::before{content:"□"}
+.rm-list li.idea::before{content:"◇"}
+.hw{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-top:44px;padding-top:36px;border-top:2px solid var(--ink)}
+.hw h3{font-size:clamp(22px,3vw,28px);line-height:1.15;margin:12px 0 10px}
+.hw p{margin-bottom:12px;max-width:34em}
+.hwposter{width:100%;height:auto;display:block;border:2px solid var(--ink)}
+@media (max-width:1000px){.rm{grid-template-columns:repeat(2,1fr)}.rm-col{border-bottom:1px solid var(--grey)}.hw{grid-template-columns:1fr}}
+@media (max-width:600px){.rm{grid-template-columns:1fr}.rm-col{border-right:0}}

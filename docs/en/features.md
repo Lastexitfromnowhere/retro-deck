@@ -1,6 +1,6 @@
 # Features
 
-> Prototype in development: this describes the current Windows prototype. Details may change before the public release.
+> Early access: this describes version 0.1 for Windows. Details may change from one version to the next.
 
 [← README](../../README.md) · [Français](../fr/features.md)
 
