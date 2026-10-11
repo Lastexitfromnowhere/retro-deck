@@ -5,6 +5,7 @@
  *
  *   POST /api/waitlist   { email, lang?, source?, website? (honeypot) }
  *   GET  /api/health     { ok: true }
+ *   /api/pay/*, /api/stripe-webhook   → transmis au Worker de paiement privé (liaison PAY), s'il existe
  *
  * Données conservées : email, langue, source, date. Jamais l'adresse IP : le rate-limit
  * utilise un hash éphémère stocké 60 s dans KV. Un email déjà inscrit reçoit la même
@@ -32,6 +33,12 @@ export default {
     const { pathname } = new URL(request.url);
 
     if (pathname === '/api/health' && request.method === 'GET') return json({ ok: true });
+
+    // Paiement : le code vit dans un Worker PRIVÉ (liaison de service « PAY »). Sans liaison, rien n'est vendable.
+    if (pathname.startsWith('/api/pay/') || pathname === '/api/stripe-webhook') {
+      if (!env.PAY) return json({ error: 'payments_unavailable' }, 503);
+      return env.PAY.fetch(request);
+    }
 
     if (pathname === '/api/waitlist') {
       if (request.method !== 'POST') return json({ error: 'method_not_allowed' }, 405);

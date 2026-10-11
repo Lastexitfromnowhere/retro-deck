@@ -26,3 +26,8 @@ database_id = "<id de la base D1>"
 [[kv_namespaces]]
 binding = "RL"
 id = "<id du namespace KV>"
+
+# Facultatif : paiement. Le code de paiement est dans un Worker privé qui n'est pas dans ce dépôt.
+# [[services]]
+# binding = "PAY"
+# service = "<nom du Worker de paiement>"
