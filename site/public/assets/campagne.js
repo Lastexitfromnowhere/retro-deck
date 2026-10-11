@@ -33,3 +33,35 @@
       msg.textContent = t("Inscription indisponible pour le moment. Réessaie plus tard.", "Sign-up unavailable right now. Please try again later.");
     });
   });
+
+// Colonnes à défilement interne : pas de barre, un repère « défiler » tant qu'il reste du contenu en dessous.
+(function () {
+  "use strict";
+  var TXT = { fr: "↓ défiler", en: "↓ scroll" };
+  var lang = function () { return document.documentElement.lang === "en" ? "en" : "fr"; };
+  function hintify(el) {
+    var hint = document.createElement("div");
+    hint.className = "scrollhint off";
+    hint.setAttribute("aria-hidden", "true");
+    var span = document.createElement("span");
+    hint.appendChild(span);
+    el.appendChild(hint);
+    function update() {
+      var t = TXT[lang()];
+      if (span.textContent !== t) span.textContent = t; // ne rien écrire si inchangé : évite de se déclencher soi-même en boucle
+      var more = el.scrollHeight - el.clientHeight > 12 && el.scrollTop + el.clientHeight < el.scrollHeight - 12;
+      hint.classList.toggle("off", !more);
+    }
+    el.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    new MutationObserver(update).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    if (window.ResizeObserver) new ResizeObserver(update).observe(el);
+    // le contenu change (boutons d'achat ajoutés plus tard) : on revérifie
+    new MutationObserver(function (muts) {
+      var outside = muts.some(function (m) { return !hint.contains(m.target); });
+      if (outside) update();
+    }).observe(el, { childList: true, subtree: true });
+    update();
+  }
+  [].forEach.call(document.querySelectorAll(".side, .toc"), hintify);
+})();
