@@ -106,7 +106,6 @@
  "<b>Pas de compte</b> à créer.": "<b>No account</b> to create.",
  "<b>Pas de cloud obligatoire</b> : ça fonctionne hors ligne.": "<b>No mandatory cloud</b>: it works offline.",
  "<b>Pas de piège de sortie</b> : tout est en Markdown et JSON. Si le projet s'arrête, tes fichiers restent lisibles.": "<b>No lock-in</b>: everything is Markdown and JSON. If the project stops, your files stay readable.",
- "<b>Aucune IA</b> dans le produit, et aucun accès à tes mails ou calendriers.": "<b>No AI</b> in the product, and no access to your email or calendars.",
  "Les bons outils existent. Aucun ne réunit un planning guidé, une vraie règle de simplicité, tes notes en fichiers ouverts et un paiement unique.": "Good tools exist. None combines guided planning, a real simplicity rule, your notes as open files, and a one-time payment.",
  "Planificateurs en abonnement": "Subscription planners",
  "Notes locales gratuites + plugins": "Free local notes + plugins",
@@ -139,7 +138,6 @@
  "Questions.": "Questions.",
  "C'est disponible ?": "Is it available?",
  "Y a-t-il de l'IA dedans ?": "Is there AI in it?",
- "Non. Aucune fonction d'IA, aucune donnée envoyée à un service d'IA.": "No. No AI feature, and no data sent to any AI service.",
  "« No cloud », ça veut dire jamais de réseau ?": "“No cloud” — does that mean never any network?",
  "Le fonctionnement principal est entièrement local et aucun compte n'est requis. Tout composant optionnel qui utiliserait le réseau serait clairement indiqué.": "The core of the app is fully local and no account is required. Any optional component that used the network would be clearly labelled.",
  "L'application est-elle faite pour le TDAH ?": "Is the app made for ADHD?",
@@ -191,7 +189,9 @@
  "<b>Pas d'abonnement</b> : un paiement unique.": "<b>No subscription</b>: a one-time payment.",
  "Une fois": "One-time",
  "Comment ça marche": "How it works",
- "Voir les offres ↓": "See the offers ↓"
+ "Voir les offres ↓": "See the offers ↓",
+ "<b>Aucun accès</b> à tes mails ou calendriers. Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA. Une édition avec IA locale, sur l'appareil, est à l'étude.": "<b>No access</b> to your email or calendars. This version has no AI feature and sends no data to any AI service. An edition with local, on-device AI is being considered.",
+ "Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA. Une édition avec IA locale, sur l'appareil, est à l'étude.": "This version has no AI feature and sends no data to any AI service. An edition with local, on-device AI is being considered."
 };
     var ATTR = {"Chapitres": "Chapters", "Affiche : moins de bruit, plus de focus, et la fenêtre de l'application": "Poster: less noise, more focus, and the app window", "Storyboard : planifier, se concentrer, retenir": "Storyboard: plan, focus, remember", "Affiche : un grand 3 et trois tâches": "Poster: a big 3 and three tasks", "Affiche : une batterie à quatre barres sur cinq et la suggestion du jour": "Poster: a battery with four bars out of five and today's suggestion", "Affiche : le mode focus avec un minuteur": "Poster: focus mode with a timer", "Affiche : bloqué, débloqué, fiche de révision": "Poster: stuck, solved, revision card", "Affiche : l'éditeur plein écran avec sa barre de commandes façon nano": "Poster: the full-screen editor with its nano-style command bar", "Affiche : vidage de tête puis bilan du soir": "Poster: brain dump then evening review", "Affiche : un dossier de fichiers .md sur ton ordinateur": "Poster: a folder of .md files on your computer", "Adresse email": "Email address", "ton@email.com": "you@email.com"};
     var META = {"title": "RETRO-DECK MD-1 — Three tasks. A clearer day.", "desc": "The calm work notebook for Windows: plan around your energy, focus on one thing, turn your mistakes into revision. Local, no account, no subscription. Early access."};

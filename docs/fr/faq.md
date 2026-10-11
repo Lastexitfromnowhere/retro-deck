@@ -6,7 +6,7 @@
 
 **Combien ça coûte ?** Voir les offres sur la [page campagne](https://retrodeck.lastparadox.dev/campagne#paliers). Paiement unique, sans abonnement.
 
-**Y a-t-il de l'IA dedans ?** Non. Aucune fonction d'IA, aucune donnée envoyée à un service d'IA.
+**Y a-t-il de l'IA dedans ?** Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA. Une édition avec IA locale, sur l'appareil, est à l'étude.
 
 **« No cloud », ça veut dire jamais de réseau ?** Le cœur est entièrement local et aucun compte n'est requis. Tout composant optionnel qui utiliserait le réseau serait clairement indiqué.
 

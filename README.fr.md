@@ -1,7 +1,7 @@
 # RETRO-DECK MD-1
 
 **Le carnet de travail calme qui planifie ta journée selon ton énergie et transforme tes erreurs en révisions.**
-Local. Hors ligne. Sans compte. Sans abonnement. Sans IA.
+Local. Hors ligne. Sans compte. Sans abonnement.
 
 [English](README.md) · [Français](README.fr.md) · [Site](https://retrodeck.lastparadox.dev) · [Page de campagne](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
@@ -42,7 +42,7 @@ Détails : [documentation](docs/fr/features.md) · [raccourcis](docs/fr/shortcut
 - **Volontairement petit.** Mieux vaut peu de fonctions solides que beaucoup de fragiles.
 - **Aucune manipulation.** Pas de séries, pas de notifications, pas de récompenses artificielles.
 - **Honnêteté.** On sépare ce qui existe de ce qui est prévu.
-- **Aucune IA.** Aucune fonction d'IA, aucun accès à tes mails ou calendriers.
+- **Discrétion.** Aucun accès à tes mails ou calendriers. Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA. Une édition avec IA locale, sur l'appareil, est à l'étude.
 
 ## Feuille de route
 

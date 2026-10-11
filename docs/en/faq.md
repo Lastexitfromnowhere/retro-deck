@@ -6,7 +6,7 @@
 
 **How much does it cost?** See the offers on the [campaign page](https://retrodeck.lastparadox.dev/campagne#paliers). One-time payment, no subscription.
 
-**Is there AI in it?** No. No AI feature, and no data sent to any AI service.
+**Is there AI in it?** This version has no AI feature and sends no data to any AI service. An edition with local, on-device AI is being considered.
 
 **Does "no cloud" mean never any network?** The core is fully local and no account is required. Any optional component that used the network would be clearly labelled.
 

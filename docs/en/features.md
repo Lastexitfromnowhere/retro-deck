@@ -47,4 +47,4 @@ One task, one timer (15, 25, 50 or 90 minutes, adjustable). A small counter stay
 
 ## What the app does not do
 
-No sync, no account, no mobile version, **no AI**, no access to your email or calendars, no notifications, no streaks. Windows only for now.
+No sync, no account, no mobile version, no access to your email or calendars, no notifications, no streaks. This version has no AI feature and sends no data to any AI service. An edition with local, on-device AI is being considered. Windows only for now.

@@ -1,7 +1,7 @@
 # RETRO-DECK MD-1
 
 **The calm work notebook that plans your day around your energy and turns your mistakes into revision.**
-Local. Offline. No account. No subscription. No AI.
+Local. Offline. No account. No subscription.
 
 [English](README.md) · [Français](README.fr.md) · [Website](https://retrodeck.lastparadox.dev) · [Campaign page](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
@@ -42,7 +42,7 @@ Full details: [documentation](docs/en/features.md) · [shortcuts](docs/en/shortc
 - **Deliberately small.** Better a few solid features than many fragile ones.
 - **No manipulation.** No streaks, no notifications, no artificial rewards.
 - **Honesty.** What exists is separated from what is planned.
-- **No AI.** No AI feature, and no access to your email or calendars.
+- **Discretion.** No access to your email or calendars. This version has no AI feature and sends no data to any AI service. An edition with local, on-device AI is being considered.
 
 ## Roadmap
 
