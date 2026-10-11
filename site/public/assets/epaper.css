@@ -124,3 +124,19 @@ footer.foot nav{display:flex;gap:16px;flex-wrap:wrap}
 .hwposter{width:100%;height:auto;display:block;border:2px solid var(--ink)}
 @media (max-width:1000px){.rm{grid-template-columns:repeat(2,1fr)}.rm-col{border-bottom:1px solid var(--grey)}.hw{grid-template-columns:1fr}}
 @media (max-width:600px){.rm{grid-template-columns:1fr}.rm-col{border-right:0}}
+
+/* page « Comment ça marche » */
+.tuto-hero{padding:52px 0 18px;border-bottom:0}
+.tuto-hero .lead{max-width:40em}
+.tuto{max-width:var(--w);margin:0 auto;padding:0 24px}
+.step{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;padding:42px 0;border-top:1px solid var(--grey)}
+.step.flip .st-text{order:2}
+.st-n{display:inline-grid;place-items:center;width:46px;height:46px;background:var(--ink);color:var(--paper);font-weight:700;font-size:20px}
+.when{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;border:1px solid var(--ink);padding:0 8px;margin-left:12px;vertical-align:top;margin-top:4px}
+.step h3{font-size:clamp(20px,2.6vw,27px);line-height:1.2;margin:14px 0 12px}
+.step ul,.step ol{margin:0 0 0 20px;max-width:34em}
+.step li{margin:8px 0;font-size:15px}
+.step code{background:var(--paper2);border:1px solid var(--line);padding:0 5px;font-size:.92em}
+.shot{width:100%;height:auto;display:block}
+.recap{margin-top:30px;padding-top:30px;border-top:2px solid var(--ink)}
+@media (max-width:900px){.step{grid-template-columns:1fr;gap:20px;padding:30px 0}.step.flip .st-text{order:0}}

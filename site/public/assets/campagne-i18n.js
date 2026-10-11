@@ -189,7 +189,8 @@
  "Accès anticipé · version 0.1 pour Windows. Les affiches de cette page sont des illustrations.": "Early access · version 0.1 for Windows. The posters on this page are illustrations.",
  "Feuille de route": "Roadmap",
  "<b>Pas d'abonnement</b> : un paiement unique.": "<b>No subscription</b>: a one-time payment.",
- "Une fois": "One-time"
+ "Une fois": "One-time",
+ "Comment ça marche": "How it works"
 };
     var ATTR = {"Chapitres": "Chapters", "Affiche : moins de bruit, plus de focus, et la fenêtre de l'application": "Poster: less noise, more focus, and the app window", "Storyboard : planifier, se concentrer, retenir": "Storyboard: plan, focus, remember", "Affiche : un grand 3 et trois tâches": "Poster: a big 3 and three tasks", "Affiche : une batterie à quatre barres sur cinq et la suggestion du jour": "Poster: a battery with four bars out of five and today's suggestion", "Affiche : le mode focus avec un minuteur": "Poster: focus mode with a timer", "Affiche : bloqué, débloqué, fiche de révision": "Poster: stuck, solved, revision card", "Affiche : l'éditeur plein écran avec sa barre de commandes façon nano": "Poster: the full-screen editor with its nano-style command bar", "Affiche : vidage de tête puis bilan du soir": "Poster: brain dump then evening review", "Affiche : un dossier de fichiers .md sur ton ordinateur": "Poster: a folder of .md files on your computer", "Adresse email": "Email address", "ton@email.com": "you@email.com"};
     var META = {"title": "RETRO-DECK MD-1 — Three tasks. A clearer day.", "desc": "The calm work notebook for Windows: plan around your energy, focus on one thing, turn your mistakes into revision. Local, no account, no subscription. Early access."};
