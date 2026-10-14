@@ -5,7 +5,7 @@ Local. Offline. No account. No subscription.
 
 [English](README.md) · [Français](README.fr.md) · [Website](https://retrodeck.lastparadox.dev) · [Campaign page](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
-> **Status (October 2026): early access, version 0.1 for Windows.** The app is on sale as a one-time purchase, no subscription; it will evolve with the first users' feedback.
+> **Status (October 2026): early access, version 0.2 for Windows.** The app is on sale as a one-time purchase, no subscription; it will evolve with the first users' feedback.
 > This repository is the public showcase: documentation, design charter and the source of the website. **The application itself is proprietary and is not included here.**
 
 ---
@@ -19,6 +19,13 @@ RETRO-DECK MD-1 is a local work notebook for Windows built around three moves:
 3. **Remember**: a solution you found becomes a revision card that comes back at the right time.
 
 Your notes are plain `.md` files in a folder on your computer. If the app disappears, your files stay readable.
+
+## New in version 0.2: one cartridge at a time
+
+- **Cartridges**: each project is a plain folder of `.md` files; only one is inserted at a time and the app shows nothing else. Ejecting takes a deliberate move (hold `Esc` for 2 seconds).
+- **Parking** (`Ctrl+Space`): park a stray thought in `parking.md` without leaving your text, sort it later (tomorrow / card / trash).
+- **Tunnel** (`Ctrl+Shift+T`): full screen, only the paragraph you are writing stays sharp.
+- **Sprint** (`Ctrl+Shift+S`): 10, 25 or 45 minutes; in draft mode delete, arrows and mouse are locked. A short **landing** screen follows.
 
 ## Features of the prototype
 

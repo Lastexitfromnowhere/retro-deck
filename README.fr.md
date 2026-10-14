@@ -5,7 +5,7 @@ Local. Hors ligne. Sans compte. Sans abonnement.
 
 [English](README.md) · [Français](README.fr.md) · [Site](https://retrodeck.lastparadox.dev) · [Page de campagne](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
-> **Statut (octobre 2026) : accès anticipé, version 0.1 pour Windows.** L'application est en vente en achat unique, sans abonnement ; elle va évoluer avec les retours des premiers utilisateurs.
+> **Statut (octobre 2026) : accès anticipé, version 0.2 pour Windows.** L'application est en vente en achat unique, sans abonnement ; elle va évoluer avec les retours des premiers utilisateurs.
 > Ce dépôt est la vitrine publique : documentation, charte graphique et source du site web. **L'application elle-même est propriétaire et n'est pas incluse ici.**
 
 ---
@@ -19,6 +19,13 @@ RETRO-DECK MD-1 est un carnet de travail local pour Windows, construit autour de
 3. **Retenir** : une solution trouvée devient une fiche de révision qui revient au bon moment.
 
 Tes notes sont de simples fichiers `.md` dans un dossier de ton ordinateur. Si l'application disparaît, tes fichiers restent lisibles.
+
+## Nouveau en version 0.2 : une cartouche à la fois
+
+- **Cartouches** : chaque projet est un simple dossier de `.md` ; une seule est insérée à la fois et l'appli n'affiche qu'elle. Éjecter demande un geste volontaire (`Échap` maintenu 2 secondes).
+- **Parking** (`Ctrl+Espace`) : gare une pensée parasite dans `parking.md` sans quitter ton texte, trie-la après (demain / fiche / poubelle).
+- **Tunnel** (`Ctrl+Maj+T`) : plein écran, seul le paragraphe en cours reste net.
+- **Sprint** (`Ctrl+Maj+S`) : 10, 25 ou 45 minutes ; en brouillon, effacer, flèches et souris sont bloqués. Un court écran d'**atterrissage** suit.
 
 ## Fonctions du prototype
 

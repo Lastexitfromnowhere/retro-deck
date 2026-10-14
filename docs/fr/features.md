@@ -4,6 +4,13 @@
 
 [← README](../../README.fr.md) · [English](../en/features.md)
 
+## Nouveau en version 0.2 : une cartouche à la fois
+
+- **Cartouches** : chaque projet est un simple dossier de `.md` ; une seule est insérée à la fois et l'appli n'affiche qu'elle. Éjecter demande un geste volontaire (`Échap` maintenu 2 secondes).
+- **Parking** (`Ctrl+Espace`) : gare une pensée parasite dans `parking.md` sans quitter ton texte, trie-la après (demain / fiche / poubelle).
+- **Tunnel** (`Ctrl+Maj+T`) : plein écran, seul le paragraphe en cours reste net.
+- **Sprint** (`Ctrl+Maj+S`) : 10, 25 ou 45 minutes ; en brouillon, effacer, flèches et souris sont bloqués. Un court écran d'**atterrissage** suit.
+
 ## Aujourd'hui et planifier
 
 - **Trois tâches par jour, pas plus.** Une liste courte se termine.

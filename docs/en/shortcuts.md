@@ -16,5 +16,8 @@
 | `Ctrl+N` | New empty note |
 | `Ctrl+B` / `Ctrl+Shift+B` | Fold the menu / open the note list |
 | `Alt+arrows` | Directional pad from an input field |
+| `Ctrl+Space` | Park a thought |
+| `Ctrl+Shift+T` / `Ctrl+Shift+S` | Tunnel / sprint |
+| Hold `Esc` 2 s | Leave the tunnel, stop the sprint, eject the cartridge |
 
 `Ctrl+C` and `Ctrl+V` remain the system copy and paste.

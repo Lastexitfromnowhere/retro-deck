@@ -16,5 +16,8 @@
 | `Ctrl+N` | Nouvelle note vide |
 | `Ctrl+B` / `Ctrl+Maj+B` | Replier le menu / ouvrir la liste des notes |
 | `Alt+flèches` | Croix directionnelle depuis un champ de saisie |
+| `Ctrl+Espace` | Garer une pensée (parking) |
+| `Ctrl+Maj+T` / `Ctrl+Maj+S` | Tunnel / sprint |
+| `Échap` maintenu 2 s | Sortir du tunnel, arrêter le sprint, éjecter la cartouche |
 
 `Ctrl+C` et `Ctrl+V` restent le copier-coller du système.

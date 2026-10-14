@@ -44,12 +44,12 @@
   <span class="lang" role="group" aria-label="Langue / Language"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></span>
 </div></header>
 <div class="page">
-  <aside class="side" aria-label="Sommaire"><a href="#overview"><span class="fr">Vue d'ensemble</span><span class="en">Overview</span></a><a href="#data"><span class="fr">Où sont tes données</span><span class="en">Where your data lives</span></a><a href="#today"><span class="fr">Aujourd'hui et planifier</span><span class="en">Today and planning</span></a><a href="#energy"><span class="fr">Niveau d'énergie</span><span class="en">Energy level</span></a><a href="#focus"><span class="fr">Mode focus</span><span class="en">Focus mode</span></a><a href="#write"><span class="fr">Écrire</span><span class="en">Writing</span></a><a href="#cards"><span class="fr">Fiches de révision</span><span class="en">Revision cards</span></a><a href="#dump"><span class="fr">Vidage et bilan du soir</span><span class="en">Brain dump and evening review</span></a><a href="#nav"><span class="fr">Navigation et réglages</span><span class="en">Navigation and settings</span></a><a href="#keys"><span class="fr">Raccourcis</span><span class="en">Shortcuts</span></a><a href="#limits"><span class="fr">Ce que l'application ne fait pas</span><span class="en">What the app does not do</span></a></aside>
+  <aside class="side" aria-label="Sommaire"><a href="#overview"><span class="fr">Vue d'ensemble</span><span class="en">Overview</span></a><a href="#data"><span class="fr">Où sont tes données</span><span class="en">Where your data lives</span></a><a href="#today"><span class="fr">Aujourd'hui et planifier</span><span class="en">Today and planning</span></a><a href="#energy"><span class="fr">Niveau d'énergie</span><span class="en">Energy level</span></a><a href="#focus"><span class="fr">Mode focus</span><span class="en">Focus mode</span></a><a href="#write"><span class="fr">Écrire</span><span class="en">Writing</span></a><a href="#cartridges"><span class="fr">Cartouches et parking</span><span class="en">Cartridges and parking</span></a><a href="#cards"><span class="fr">Fiches de révision</span><span class="en">Revision cards</span></a><a href="#dump"><span class="fr">Vidage et bilan du soir</span><span class="en">Brain dump and evening review</span></a><a href="#nav"><span class="fr">Navigation et réglages</span><span class="en">Navigation and settings</span></a><a href="#keys"><span class="fr">Raccourcis</span><span class="en">Shortcuts</span></a><a href="#limits"><span class="fr">Ce que l'application ne fait pas</span><span class="en">What the app does not do</span></a></aside>
   <article class="prose">
 <div class="fr" lang="fr">
 <h1>Documentation</h1>
 <p class="upd">Version 0.1 · mise à jour le 11 octobre 2026</p>
-<div class="callout"><b>Accès anticipé.</b> Cette documentation décrit la version 0.1 pour Windows. Des détails peuvent changer d'une version à l'autre. Nouveau ? Commence par <a href="/tuto">Comment ça marche</a>.</div>
+<div class="callout"><b>Accès anticipé.</b> Cette documentation décrit la version 0.2 pour Windows. Des détails peuvent changer d'une version à l'autre. Nouveau ? Commence par <a href="/tuto">Comment ça marche</a>.</div>
 
 <h2 id="overview">Vue d'ensemble</h2>
 <p>RETRO-DECK MD-1 est un carnet de travail local pour Windows. Il tient en trois gestes : <b>planifier</b> sa journée (trois tâches maximum), <b>se concentrer</b> sur une seule chose, <b>retenir</b> ce que l'on apprend grâce à des fiches de révision. Tout fonctionne hors ligne, sans compte, et tes notes sont de simples fichiers <code>.md</code>.</p>
@@ -84,6 +84,11 @@
 <li><b>Mode lecture</b> (<kbd>Ctrl</kbd>+<kbd>E</kbd>) : titres, cases à cocher, citations, code.</li>
 <li>Une barre de commandes façon <b>nano</b> rappelle les raccourcis en bas de l'écran (voir « Raccourcis »).</li>
 </ul>
+
+<h2 id="cartridges">Cartouches, parking, tunnel, sprint</h2>
+<p>Une <b>cartouche</b> est un dossier de fichiers <code>.md</code>. Tu en crées une depuis l'accueil (elle est rangée dans <code>RETRO-DECK/cartouches/</code>) ou tu ranges un dossier existant, qui ne bouge pas. Une seule cartouche est insérée à la fois : la liste des notes, la nouvelle note et le parking concernent alors ce dossier. L'étagère est enregistrée dans <code>data/etagere.json</code>. Éjecter ne supprime rien.</p>
+<p>Le <b>parking</b> (<kbd>Ctrl</kbd>+<kbd>Espace</kbd>, partout) ajoute une ligne <code>- [ ] HH:MM — ta pensée</code> au fichier <code>parking.md</code> de la cartouche (ou de <code>notes/</code> sans cartouche). Au tri, <b>demain</b> l'ajoute au plan du lendemain (ou à <code>notes/demain.md</code> si les 3 tâches sont prises), <b>fiche</b> crée une fiche à compléter, <b>poubelle</b> la retire.</p>
+<p>Le <b>tunnel</b> masque tout sauf le texte : le paragraphe en cours reste net, le reste passe en gris. Le <b>sprint</b> ajoute un minuteur (10, 25 ou 45 min) ; en mode brouillon, effacer, flèches, souris et raccourcis d'édition sont bloqués dans l'éditeur. Les minutes comptent dans le bilan du soir. Pour sortir : <kbd>Échap</kbd> maintenu 2 secondes. Le flash e-ink des changements d'écran se coupe dans les réglages.</p>
 
 <h2 id="cards">Fiches de révision</h2>
 <ul>
@@ -129,7 +134,10 @@ Il doit aussi avoir l'attribut Secure (HTTPS).</code></pre>
 <tr><td><kbd>Ctrl</kbd>+<kbd>J</kbd></td><td>Créer une fiche depuis la sélection</td></tr>
 <tr><td><kbd>Ctrl</kbd>+<kbd>N</kbd></td><td>Nouvelle note vide</td></tr>
 <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd> / <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>B</kbd></td><td>Replier le menu / ouvrir la liste des notes</td></tr>
-<tr><td><kbd>Alt</kbd>+flèches</td><td>Croix directionnelle depuis un champ de saisie</td></tr></table></div>
+<tr><td><kbd>Alt</kbd>+flèches</td><td>Croix directionnelle depuis un champ de saisie</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Espace</kbd></td><td>Garer une pensée (parking)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>T</kbd> / <kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>S</kbd></td><td>Tunnel / sprint</td></tr>
+<tr><td><kbd>Échap</kbd> maintenu 2 s</td><td>Sortir du tunnel, arrêter le sprint, éjecter la cartouche</td></tr></table></div>
 <p><kbd>Ctrl</kbd>+<kbd>C</kbd> et <kbd>Ctrl</kbd>+<kbd>V</kbd> restent le copier-coller du système.</p>
 
 <h2 id="limits">Ce que l'application ne fait pas</h2>
@@ -144,7 +152,7 @@ Il doit aussi avoir l'attribut Secure (HTTPS).</code></pre>
 <div class="en" lang="en">
 <h1>Documentation</h1>
 <p class="upd">Version 0.1 · updated October 11, 2026</p>
-<div class="callout"><b>Early access.</b> This documentation describes version 0.1 for Windows. Details may change from one version to the next. New here? Start with <a href="/tuto">How it works</a>.</div>
+<div class="callout"><b>Early access.</b> This documentation describes version 0.2 for Windows. Details may change from one version to the next. New here? Start with <a href="/tuto">How it works</a>.</div>
 
 <h2 id="overview">Overview</h2>
 <p>RETRO-DECK MD-1 is a local work notebook for Windows. It comes down to three moves: <b>plan</b> your day (three tasks at most), <b>focus</b> on one thing, <b>remember</b> what you learn through revision cards. Everything works offline, without an account, and your notes are plain <code>.md</code> files.</p>
@@ -179,6 +187,11 @@ Il doit aussi avoir l'attribut Secure (HTTPS).</code></pre>
 <li><b>Reading mode</b> (<kbd>Ctrl</kbd>+<kbd>E</kbd>): headings, checkboxes, quotes, code.</li>
 <li>A <b>nano</b>-style command bar reminds you of the shortcuts at the bottom of the screen (see “Shortcuts”).</li>
 </ul>
+
+<h2 id="cartridges">Cartridges, parking, tunnel, sprint</h2>
+<p>A <b>cartridge</b> is a folder of <code>.md</code> files. Create one from the home screen (it is stored in <code>RETRO-DECK/cartouches/</code>) or shelve an existing folder, which stays where it is. Only one cartridge is inserted at a time: the note list, new notes and the parking then belong to that folder. The shelf is saved in <code>data/etagere.json</code>. Ejecting deletes nothing.</p>
+<p>The <b>parking</b> (<kbd>Ctrl</kbd>+<kbd>Space</kbd>, anywhere) appends a line <code>- [ ] HH:MM — your thought</code> to the cartridge's <code>parking.md</code> (or to <code>notes/</code> with no cartridge). When sorting, <b>tomorrow</b> adds it to the next day's plan (or to <code>notes/demain.md</code> if the 3 tasks are taken), <b>card</b> creates a card to complete, <b>trash</b> removes it.</p>
+<p>The <b>tunnel</b> hides everything but the text: the current paragraph stays sharp, the rest turns grey. The <b>sprint</b> adds a timer (10, 25 or 45 min); in draft mode, delete, arrows, mouse and editing shortcuts are locked in the editor. Minutes count in the evening review. To leave: hold <kbd>Esc</kbd> for 2 seconds. The e-ink flash on screen changes can be turned off in the settings.</p>
 
 <h2 id="cards">Revision cards</h2>
 <ul>
@@ -224,7 +237,10 @@ It must also have the Secure attribute (HTTPS).</code></pre>
 <tr><td><kbd>Ctrl</kbd>+<kbd>J</kbd></td><td>Create a card from the selection</td></tr>
 <tr><td><kbd>Ctrl</kbd>+<kbd>N</kbd></td><td>New empty note</td></tr>
 <tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd></td><td>Fold the menu / open the note list</td></tr>
-<tr><td><kbd>Alt</kbd>+arrows</td><td>Directional pad from an input field</td></tr></table></div>
+<tr><td><kbd>Alt</kbd>+arrows</td><td>Directional pad from an input field</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Space</kbd></td><td>Park a thought</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></td><td>Tunnel / sprint</td></tr>
+<tr><td>Hold <kbd>Esc</kbd> 2 s</td><td>Leave the tunnel, stop the sprint, eject the cartridge</td></tr></table></div>
 <p><kbd>Ctrl</kbd>+<kbd>C</kbd> and <kbd>Ctrl</kbd>+<kbd>V</kbd> remain the system copy and paste.</p>
 
 <h2 id="limits">What the app does not do</h2>
@@ -239,7 +255,7 @@ It must also have the Secure attribute (HTTPS).</code></pre>
   </article>
 </div>
 <footer class="foot"><div class="in">
-  <div>RETRO-DECK MD-1 · <span class="fr">un projet LastParadox</span><span class="en">a LastParadox project</span> · © 2026<br><span class="small"><span class="fr">Accès anticipé · version 0.1 pour Windows. Achat unique, sans abonnement.</span><span class="en">Early access · version 0.1 for Windows. One-time purchase, no subscription.</span></span></div>
+  <div>RETRO-DECK MD-1 · <span class="fr">un projet LastParadox</span><span class="en">a LastParadox project</span> · © 2026<br><span class="small"><span class="fr">Accès anticipé · version 0.2 pour Windows. Achat unique, sans abonnement.</span><span class="en">Early access · version 0.2 for Windows. One-time purchase, no subscription.</span></span></div>
   <nav aria-label="Liens légaux">
     <a href="/terms"><span class="fr">Conditions</span><span class="en">Terms</span></a>
     <a href="/privacy"><span class="fr">Confidentialité</span><span class="en">Privacy</span></a>

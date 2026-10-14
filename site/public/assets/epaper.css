@@ -168,3 +168,9 @@ footer.foot nav{display:flex;gap:16px;flex-wrap:wrap}
   .band{padding:12px 16px}
   .rm-col{padding:16px}
 }
+
+/* v0.2 : section cartouche + vidéo verticale */
+.v02w{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:34px;align-items:start}
+@media (max-width:860px){.v02w{grid-template-columns:minmax(0,1fr)}}
+.vid video{width:100%;max-width:340px;aspect-ratio:9/16;border:3px solid #111;box-shadow:8px 8px 0 #111;background:#ecebe6;display:block}
+.vid .small{margin-top:14px}

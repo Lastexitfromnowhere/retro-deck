@@ -4,6 +4,13 @@
 
 [← README](../../README.md) · [Français](../fr/features.md)
 
+## New in version 0.2: one cartridge at a time
+
+- **Cartridges**: each project is a plain folder of `.md` files; only one is inserted at a time and the app shows nothing else. Ejecting takes a deliberate move (hold `Esc` for 2 seconds).
+- **Parking** (`Ctrl+Space`): park a stray thought in `parking.md` without leaving your text, sort it later (tomorrow / card / trash).
+- **Tunnel** (`Ctrl+Shift+T`): full screen, only the paragraph you are writing stays sharp.
+- **Sprint** (`Ctrl+Shift+S`): 10, 25 or 45 minutes; in draft mode delete, arrows and mouse are locked. A short **landing** screen follows.
+
 ## Today and planning
 
 - **Three tasks a day, no more.** A short list gets finished.
