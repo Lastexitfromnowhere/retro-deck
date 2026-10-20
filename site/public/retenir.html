@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title data-fr="L'IA a fait l'exercice. Et toi, tu l'as retenu ? — RETRO-DECK MD-1" data-en="The AI did the exercise. Did you keep it? — RETRO-DECK MD-1">L'IA a fait l'exercice. Et toi, tu l'as retenu ? — RETRO-DECK MD-1</title>
+<meta name="description" content="Une idée à l'étude : coller la réponse d'une IA, un raccourci, et elle devient une fiche à refaire de mémoire demain. Pas encore dans l'application : dites-nous si ça vous servirait." data-fr="Une idée à l'étude : coller la réponse d'une IA, un raccourci, et elle devient une fiche à refaire de mémoire demain. Pas encore dans l'application : dites-nous si ça vous servirait." data-en="An idea under study: paste an AI's answer, one shortcut, and it becomes a card you redo from memory tomorrow. Not in the app yet: tell us whether it would help you.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RETRO-DECK MD-1">
+<meta property="og:title" content="L'IA a fait l'exercice. Et toi, tu l'as retenu ?">
+<meta property="og:description" content="Une idée à l'étude : coller la réponse d'une IA, un raccourci, une fiche à refaire de mémoire demain. Dites-nous si ça vous servirait.">
+<meta property="og:url" content="https://retrodeck.lastparadox.dev/retenir">
+<meta property="og:image" content="https://retrodeck.lastparadox.dev/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="L'IA a fait l'exercice. Et toi, tu l'as retenu ?">
+<meta name="twitter:image" content="https://retrodeck.lastparadox.dev/og-image.png">
+<meta name="theme-color" content="#111111">
+<link rel="stylesheet" href="/assets/epaper.css">
+<style>
+.rt-hero{padding:56px 0 44px;border-bottom:1px solid var(--grey)}
+.rt-hero .wrap{max-width:860px}
+.rt-hero h1{margin:16px 0 0}
+.rt-note{border:1px solid var(--ink);background:var(--paper3);padding:14px 18px;margin:26px 0 0;font-size:14.5px}
+.rt-note b{display:block;margin-bottom:2px}
+.rt-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.rt-step{border:1px solid var(--grey);background:var(--paper3);padding:16px}
+.rt-step .n{display:inline-block;background:var(--ink);color:var(--paper);font-weight:700;font-size:12px;padding:0 8px;margin-bottom:8px}
+.rt-step h3{font-size:16px;margin-bottom:6px}
+.rt-step p{font-size:14.5px;color:#333}
+.rt-step svg{width:100%;height:auto;display:block;margin-bottom:10px}
+.rt-poll{max-width:760px}
+.rt-poll fieldset{border:0;margin:0 0 22px}
+.rt-poll legend{font-weight:700;margin-bottom:12px;max-width:34em}
+.rt-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.rt-opts label{position:relative;display:block;border:1px solid var(--ink);background:var(--paper);padding:12px 14px;cursor:pointer;font-weight:700;text-align:center}
+.rt-opts input{position:absolute;opacity:0;pointer-events:none}
+.rt-opts label:has(input:checked){background:var(--ink);color:var(--paper)}
+.rt-opts label:has(input:focus-visible){outline:3px solid var(--grey);outline-offset:2px}
+.rt-opts label:hover{background:var(--paper2)}
+.rt-opts label:has(input:checked):hover{background:var(--ink)}
+.rt-poll .ask{font-weight:700;margin:0 0 6px}
+@media (max-width:760px){.rt-steps{grid-template-columns:minmax(0,1fr)}.rt-opts{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="in">
+  <a class="brand" href="/">RETRO-DECK<i>MD-1</i></a>
+  <nav aria-label="Navigation">
+    <a href="/"><span class="fr">Accueil</span><span class="en">Home</span></a>
+    <a href="/campagne"><span class="fr">Campagne</span><span class="en">Campaign</span></a>
+    <a href="/tuto"><span class="fr">Comment ça marche</span><span class="en">How it works</span></a>
+    <a href="/docs"><span class="fr">Docs</span><span class="en">Docs</span></a>
+    <a href="https://github.com/Lastexitfromnowhere/retro-deck" rel="noopener">GitHub</a>
+  </nav>
+  <span class="lang" role="group" aria-label="Langue / Language"><button type="button" data-l="fr">FR</button><button type="button" data-l="en">EN</button></span>
+</div></header>
+
+<section class="rt-hero"><div class="wrap">
+  <span class="badge"><span class="fr">À L'ÉTUDE · PAS ENCORE DANS L'APPLICATION</span><span class="en">UNDER STUDY · NOT IN THE APP YET</span></span>
+  <h1><span class="fr">L'IA a fait l'exercice.<br>Et toi, tu l'as retenu&nbsp;?</span><span class="en">The AI did the exercise.<br>Did you keep it?</span></h1>
+  <p class="lead"><span class="fr">Tu copies la réponse d'une IA. Un raccourci : c'est une fiche. Demain, elle te demande de la refaire de mémoire, puis tu compares. Tout reste en fichiers sur ton PC.</span><span class="en">You copy an AI's answer. One shortcut: it becomes a card. Tomorrow, it asks you to redo it from memory, then you compare. Everything stays as files on your PC.</span></p>
+  <div class="rt-note"><b><span class="fr">Cette fonction n'existe pas encore.</span><span class="en">This feature does not exist yet.</span></b><span class="fr">Nous voulons savoir si elle te servirait avant de la construire. C'est tout l'objet de cette page.</span><span class="en">We want to know whether it would help you before building it. That is the whole point of this page.</span></div>
+</div></section>
+
+<section class="s"><div class="wrap">
+  <h2><span class="fr">Comment ça marcherait</span><span class="en">How it would work</span></h2>
+  <p class="sub"><span class="fr">Trois gestes. Aucune IA dans RETRO-DECK : il ne sert qu'à retenir ce que tu as déjà obtenu.</span><span class="en">Three moves. No AI inside RETRO-DECK: it only helps you keep what you already got.</span></p>
+  <div class="rt-steps">
+    <div class="rt-step">
+      <svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" role="img" aria-label="Une réponse d'IA copiée"><rect x="8" y="8" width="184" height="94"/><path d="M22 28h120M22 44h150M22 60h96M22 76h134" stroke="#8a8984"/><rect x="132" y="84" width="52" height="14" fill="currentColor"/><text x="158" y="95" text-anchor="middle" font-size="9" font-weight="700" fill="#ecebe6" stroke="none"><tspan class="fr">COPIER</tspan><tspan class="en">COPY</tspan></text></svg>
+      <span class="n">1</span>
+      <h3><span class="fr">Copie la réponse</span><span class="en">Copy the answer</span></h3>
+      <p><span class="fr">Une explication, un bout de code, la solution d'un exercice : peu importe l'IA qui te l'a donnée.</span><span class="en">An explanation, a piece of code, an exercise solution: no matter which AI gave it to you.</span></p>
+    </div>
+    <div class="rt-step">
+      <svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" role="img" aria-label="Ctrl+J crée une fiche"><rect x="8" y="30" width="62" height="38" rx="2"/><text x="39" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="currentColor" stroke="none">Ctrl+J</text><path d="M80 49h30M102 41l8 8-8 8"/><rect x="120" y="14" width="72" height="82" fill="#f4f3ee"/><path d="M130 32h52M130 46h40M130 60h52M130 74h28" stroke="#8a8984"/></svg>
+      <span class="n">2</span>
+      <h3><span class="fr">Ctrl+J : une fiche</span><span class="en">Ctrl+J: a card</span></h3>
+      <p><span class="fr">La fiche est un fichier .md lisible partout. Rien à écrire, rien à configurer.</span><span class="en">The card is a .md file readable anywhere. Nothing to write, nothing to set up.</span></p>
+    </div>
+    <div class="rt-step">
+      <svg viewBox="0 0 200 110" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" role="img" aria-label="Le lendemain, refaire de mémoire"><rect x="8" y="8" width="184" height="94" fill="#f4f3ee"/><text x="20" y="30" font-size="10" font-weight="700" fill="currentColor" stroke="none"><tspan class="fr">REFAIS-LE SANS REGARDER</tspan><tspan class="en">REDO IT WITHOUT LOOKING</tspan></text><rect x="20" y="40" width="160" height="18" fill="currentColor"/><path d="M20 72h160M20 88h110" stroke-dasharray="4 4" stroke="#8a8984"/></svg>
+      <span class="n">3</span>
+      <h3><span class="fr">Demain : refais-le</span><span class="en">Tomorrow: redo it</span></h3>
+      <p><span class="fr">La réponse est cachée. Tu l'écris de mémoire, puis tu compares. C'est comme ça qu'on retient.</span><span class="en">The answer is hidden. You write it from memory, then compare. That is how you retain it.</span></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="s" id="avis"><div class="wrap rt-poll">
+  <h2><span class="fr">Ça te servirait ?</span><span class="en">Would it help you?</span></h2>
+  <p class="sub"><span class="fr">Une question, un email. Pas de newsletter : un seul message si on construit cette fonction.</span><span class="en">One question, one email. No newsletter: a single message if we build this feature.</span></p>
+  <form class="wl" data-source="retenir" novalidate style="display:block">
+    <fieldset>
+      <legend><span class="fr">La dernière fois qu'une IA t'a dépanné, saurais-tu refaire la même chose aujourd'hui, sans elle&nbsp;?</span><span class="en">The last time an AI got you out of a jam, could you do the same thing today, without it?</span></legend>
+      <div class="rt-opts">
+        <label><input type="radio" name="rt" value="oui"><span class="fr">Oui</span><span class="en">Yes</span></label>
+        <label><input type="radio" name="rt" value="moyen"><span class="fr">À peu près</span><span class="en">Roughly</span></label>
+        <label><input type="radio" name="rt" value="non"><span class="fr">Non</span><span class="en">No</span></label>
+      </div>
+    </fieldset>
+    <p class="ask"><span class="fr">Prévenez-moi si vous la construisez</span><span class="en">Tell me if you build it</span></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <input type="email" name="email" placeholder="ton@email.com / you@email.com" required autocomplete="email" aria-label="Email" style="flex:1 1 220px">
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit"><span class="fr">ME PRÉVENIR</span><span class="en">NOTIFY ME</span></button>
+    </div>
+  </form>
+  <div class="msg" role="status"></div>
+  <p class="small"><span class="fr">Ton email sert uniquement à te prévenir de cette fonction. Ta réponse à la question est enregistrée avec lui. Supprimé sur simple demande. <a href="/privacy">Confidentialité</a>.</span><span class="en">Your email is only used to tell you about this feature. Your answer to the question is saved with it. Deleted on request. <a href="/privacy">Privacy</a>.</span></p>
+  <p style="margin-top:26px"><a class="btn o" href="/"><span class="fr">Découvrir RETRO-DECK</span><span class="en">Discover RETRO-DECK</span></a></p>
+</div></section>
+
+<footer class="foot"><div class="in">
+  <div>RETRO-DECK MD-1 · <span class="fr">un projet LastParadox</span><span class="en">a LastParadox project</span> · © 2026<br><span class="small"><span class="fr">Accès anticipé · version 0.2 pour Windows. Achat unique, sans abonnement.</span><span class="en">Early access · version 0.2 for Windows. One-time purchase, no subscription.</span></span></div>
+  <nav aria-label="Liens légaux">
+    <a href="/terms"><span class="fr">Conditions</span><span class="en">Terms</span></a>
+    <a href="/privacy"><span class="fr">Confidentialité</span><span class="en">Privacy</span></a>
+    <a href="/legal"><span class="fr">Mentions légales</span><span class="en">Legal notice</span></a>
+    <a href="https://github.com/Lastexitfromnowhere/retro-deck" rel="noopener">GitHub</a>
+    <a href="mailto:support@lastparadox.xyz">support@lastparadox.xyz</a>
+  </nav>
+</div></footer>
+<script src="/assets/site.js"></script>
+<script src="/assets/retenir.js"></script>
+</body>
+</html>
