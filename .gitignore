@@ -2,3 +2,6 @@ node_modules/
 .wrangler/
 .dev.vars
 site/wrangler.toml
+
+# aperçu navigateur : copie de l interface de l application (privée), générée par app/demo/build.mjs
+site/public/essayer/
