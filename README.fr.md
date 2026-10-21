@@ -3,7 +3,7 @@
 **Le carnet de travail calme qui planifie ta journée selon ton énergie et transforme tes erreurs en révisions.**
 Local. Hors ligne. Sans compte. Sans abonnement.
 
-[English](README.md) · [Français](README.fr.md) · [Site](https://retrodeck.lastparadox.dev) · [Page de campagne](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
+[English](README.md) · [Français](README.fr.md) · [Site](https://retrodeck.lastparadox.dev) · [Essayer dans le navigateur](https://retrodeck.lastparadox.dev/essayer/) · [Page de campagne](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
 > **Statut (octobre 2026) : accès anticipé, version 0.2 pour Windows.** L'application est en vente en achat unique, sans abonnement ; elle va évoluer avec les retours des premiers utilisateurs.
 > Ce dépôt est la vitrine publique : documentation, charte graphique et source du site web. **L'application elle-même est propriétaire et n'est pas incluse ici.**
@@ -53,7 +53,7 @@ Détails : [documentation](docs/fr/features.md) · [raccourcis](docs/fr/shortcut
 
 ## Feuille de route
 
-La feuille de route détaillée, avec l'ambition d'un boîtier matériel (écran e-paper tactile + ESP32), est sur le [site](https://retrodeck.lastparadox.dev/#roadmap).
+La feuille de route détaillée est sur le [site](https://retrodeck.lastparadox.dev/#roadmap). Un appareil dédié est une idée à l'étude, sans date, sans prix et sans précommande.
 
 Prévu, sans date : polices embarquées et finitions, installeur Windows et licence perpétuelle vérifiable hors ligne, retrait d'une fiche avec confirmation, import d'un calendrier en lecture seule (lien `.ics`), validation de l'intérêt via une liste d'attente.
 Idées, sans engagement : versions macOS et Linux.

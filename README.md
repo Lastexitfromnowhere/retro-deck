@@ -3,7 +3,7 @@
 **The calm work notebook that plans your day around your energy and turns your mistakes into revision.**
 Local. Offline. No account. No subscription.
 
-[English](README.md) · [Français](README.fr.md) · [Website](https://retrodeck.lastparadox.dev) · [Campaign page](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
+[English](README.md) · [Français](README.fr.md) · [Website](https://retrodeck.lastparadox.dev) · [Try it in your browser](https://retrodeck.lastparadox.dev/essayer/) · [Campaign page](https://retrodeck.lastparadox.dev/campagne) · [Documentation](https://retrodeck.lastparadox.dev/docs)
 
 > **Status (October 2026): early access, version 0.2 for Windows.** The app is on sale as a one-time purchase, no subscription; it will evolve with the first users' feedback.
 > This repository is the public showcase: documentation, design charter and the source of the website. **The application itself is proprietary and is not included here.**
@@ -53,7 +53,7 @@ Full details: [documentation](docs/en/features.md) · [shortcuts](docs/en/shortc
 
 ## Roadmap
 
-The detailed roadmap, including the ambition of a hardware device (touch e-paper screen + ESP32), is on the [website](https://retrodeck.lastparadox.dev/#roadmap).
+The detailed roadmap is on the [website](https://retrodeck.lastparadox.dev/#roadmap). A dedicated device is an idea under study, with no date, no price and no preorder.
 
 Planned, with no date: bundled fonts and polish, a Windows installer and an offline-verifiable perpetual license, removing a card with confirmation, read-only calendar import (`.ics` link), validation of interest through a waitlist.
 Ideas, not commitments: macOS and Linux versions.
