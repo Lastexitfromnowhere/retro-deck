@@ -4,12 +4,12 @@
 
 [← README](../../README.fr.md) · [English](../en/features.md)
 
-## Nouveau en version 0.2 : une cartouche à la fois
+## Nouveau en version 0.2 : un projet à la fois
 
-- **Cartouches** : chaque projet est un simple dossier de `.md` ; une seule est insérée à la fois et l'appli n'affiche qu'elle. Éjecter demande un geste volontaire (`Échap` maintenu 2 secondes).
+- **Projets** : chaque projet est un simple dossier de `.md` ; un seul est ouvert à la fois et l'appli n'affiche que lui. Fermer un projet demande un geste volontaire (`Échap` maintenu 2 secondes).
 - **Parking** (`Ctrl+Espace`) : gare une pensée parasite dans `parking.md` sans quitter ton texte, trie-la après (demain / fiche / poubelle).
-- **Tunnel** (`Ctrl+Maj+T`) : plein écran, seul le paragraphe en cours reste net.
-- **Sprint** (`Ctrl+Maj+S`) : 10, 25 ou 45 minutes ; en brouillon, effacer, flèches et souris sont bloqués. Un court écran d'**atterrissage** suit.
+- **Concentration** (`Ctrl+Maj+T`) : plein écran, seul le paragraphe en cours reste net.
+- **Session** (`Ctrl+Maj+S`) : 10, 25 ou 45 minutes ; en brouillon, effacer, flèches et souris sont bloqués. Un court écran d'**atterrissage** suit.
 
 ## Aujourd'hui et planifier
 

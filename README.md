@@ -20,12 +20,12 @@ RETRO-DECK MD-1 is a local work notebook for Windows built around three moves:
 
 Your notes are plain `.md` files in a folder on your computer. If the app disappears, your files stay readable.
 
-## New in version 0.2: one cartridge at a time
+## New in version 0.2: one project at a time
 
-- **Cartridges**: each project is a plain folder of `.md` files; only one is inserted at a time and the app shows nothing else. Ejecting takes a deliberate move (hold `Esc` for 2 seconds).
+- **Projects**: each project is a plain folder of `.md` files; only one is open at a time and the app shows nothing else. Closing a project takes a deliberate move (hold `Esc` for 2 seconds).
 - **Parking** (`Ctrl+Space`): park a stray thought in `parking.md` without leaving your text, sort it later (tomorrow / card / trash).
-- **Tunnel** (`Ctrl+Shift+T`): full screen, only the paragraph you are writing stays sharp.
-- **Sprint** (`Ctrl+Shift+S`): 10, 25 or 45 minutes; in draft mode delete, arrows and mouse are locked. A short **landing** screen follows.
+- **Concentration** (`Ctrl+Shift+T`): full screen, only the paragraph you are writing stays sharp.
+- **Session** (`Ctrl+Shift+S`): 10, 25 or 45 minutes; in draft mode delete, arrows and mouse are locked. A short **landing** screen follows.
 
 ## Features of the prototype
 
