@@ -49,7 +49,7 @@ Full details: [documentation](docs/en/features.md) · [shortcuts](docs/en/shortc
 - **Deliberately small.** Better a few solid features than many fragile ones.
 - **No manipulation.** No streaks, no notifications, no artificial rewards.
 - **Honesty.** What exists is separated from what is planned.
-- **Discretion.** No access to your email or calendars. This version has no AI feature and sends no data to any AI service. An edition with local, on-device AI is being considered.
+- **Discretion.** No access to your email or calendars. This version has no AI feature and sends no data to any AI service.
 
 ## Roadmap
 

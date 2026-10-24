@@ -54,4 +54,4 @@ Une tâche, un minuteur (15, 25, 50 ou 90 minutes, réglable). Un petit compteur
 
 ## Ce que l'application ne fait pas
 
-Pas de synchronisation, pas de compte, pas de version mobile, aucun accès à tes mails ou calendriers, pas de notifications, pas de séries. Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA. Une édition avec IA locale, sur l'appareil, est à l'étude. Windows uniquement pour l'instant.
+Pas de synchronisation, pas de compte, pas de version mobile, aucun accès à tes mails ou calendriers, pas de notifications, pas de séries. Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA. Windows uniquement pour l'instant.

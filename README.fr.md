@@ -49,7 +49,7 @@ Détails : [documentation](docs/fr/features.md) · [raccourcis](docs/fr/shortcut
 - **Volontairement petit.** Mieux vaut peu de fonctions solides que beaucoup de fragiles.
 - **Aucune manipulation.** Pas de séries, pas de notifications, pas de récompenses artificielles.
 - **Honnêteté.** On sépare ce qui existe de ce qui est prévu.
-- **Discrétion.** Aucun accès à tes mails ou calendriers. Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA. Une édition avec IA locale, sur l'appareil, est à l'étude.
+- **Discrétion.** Aucun accès à tes mails ou calendriers. Cette version n'a pas de fonction d'IA et n'envoie aucune donnée à un service d'IA.
 
 ## Feuille de route
 
