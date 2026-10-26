@@ -12,6 +12,8 @@
  * réponse qu'un nouveau, pour ne pas révéler qui est inscrit.
  */
 
+import { handlePack, runSequence } from './pack.js';
+
 const HEADERS = {
   'Content-Type': 'application/json',
   'Cache-Control': 'no-store',
@@ -29,7 +31,7 @@ async function hashIp(ip) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
 
     if (pathname === '/api/health' && request.method === 'GET') return json({ ok: true });
@@ -74,6 +76,14 @@ export default {
       return json({ ok: true });
     }
 
+    const pack = await handlePack(request, env, ctx, new URL(request.url));
+    if (pack) return pack;
+
     return json({ error: 'not_found' }, 404);
+  },
+
+  // Déclencheur planifié (chaque jour) : emails 2 et 3 du pack de fiches, seulement si l'envoi est activé.
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(runSequence(env));
   },
 };

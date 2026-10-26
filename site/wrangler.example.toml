@@ -31,3 +31,20 @@ id = "<id du namespace KV>"
 # [[services]]
 # binding = "PAY"
 # service = "<nom du Worker de paiement>"
+
+# R2 : zip du pack de fiches (privé ; servi par /api/pack/download)
+[[r2_buckets]]
+binding = "PACK"
+bucket_name = "retrodeck-pack"
+
+# Pack de fiches : emails 2 et 3, chaque jour à 08:00 UTC (sans effet tant que l'envoi n'est pas activé)
+[triggers]
+crons = ["0 8 * * *"]
+
+# Envoi d'emails (Brevo) : la fonction « pack contre email » est ACTIVE seulement si ces deux valeurs existent.
+#   npx wrangler secret put BREVO_API_KEY        (saisie masquée ; clé API Brevo)
+#   puis décommenter / renseigner (expéditeur validé dans Brevo) :
+[vars]
+SITE_ORIGIN = "https://retrodeck.lastparadox.dev"
+MAIL_FROM_NAME = "LastParadox"
+# MAIL_FROM_EMAIL = "support@lastparadox.xyz"

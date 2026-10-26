@@ -29,6 +29,7 @@
 <meta name="twitter:image:alt" content="RETRO-DECK MD-1 — Une pensée parasite ? Garée. Ton fil, intact.">
 <meta name="theme-color" content="#111111">
 <link rel="stylesheet" href="/assets/epaper.css">
+<link rel="stylesheet" href="/assets/pack.css">
 </head>
 <body>
 <header class="nav"><div class="in">
@@ -113,6 +114,22 @@
   </div>
 </div></section>
 
+<section class="s" id="pack" data-pack hidden><div class="wrap">
+  <h2><span class="fr">50 fiches pour ne plus refaire les mêmes erreurs</span><span class="en">50 cards so you stop repeating the same mistakes</span></h2>
+  <p class="sub"><span class="fr">Git, SQL, Rust, Python, JavaScript : 50 erreurs classiques, chacune avec sa cause et sa correction, en fichiers .md pour RETRO-DECK ou Obsidian. Gratuit, en français ou en anglais.</span><span class="en">Git, SQL, Rust, Python, JavaScript: 50 classic mistakes, each with its cause and fix, as .md files for RETRO-DECK or Obsidian. Free, in French or English.</span></p>
+  <div class="packwrap">
+    <form class="pack-form" data-source="home" novalidate>
+      <div class="pf-row"><input type="email" name="email" placeholder="ton@email.com / you@email.com" required autocomplete="email" aria-label="Email"><button class="btn" type="submit"><span class="fr">RECEVOIR LE PACK</span><span class="en">GET THE PACK</span></button></div>
+      <div class="pf-lang" role="radiogroup" aria-label="Langue / Language"><label><input type="radio" name="pl" value="fr"> Français</label><label><input type="radio" name="pl" value="en"> English</label></div>
+      <label class="pf-seq"><input type="checkbox" name="seq"><span class="fr"><span>Je veux aussi recevoir 2 emails ensuite : une astuce (dans 3 jours), puis l'offre RETRO-DECK (dans 7 jours). Ensuite, plus rien.</span></span><span class="en"><span>I also want to receive 2 emails afterwards: a tip (in 3 days), then the RETRO-DECK offer (in 7 days). After that, nothing more.</span></span></label>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </form>
+    <div class="msg pack-msg" role="status"></div>
+    <div class="pack-done" hidden></div>
+    <p class="small"><span class="fr">Le pack s'affiche tout de suite. Ton email ne sert qu'à ça, et aux 2 emails si tu coches la case (décochée par défaut). Désinscription en un clic dans chaque email. <a href="/privacy">Confidentialité</a>.</span><span class="en">The pack shows up right away. Your email is only used for that, and for the 2 emails if you tick the box (unticked by default). Unsubscribe in one click from every email. <a href="/privacy">Privacy</a>.</span></p>
+  </div>
+</div></section>
+
 <section class="s" id="prix"><div class="wrap">
   <h2><span class="fr">Un paiement. Pas d'abonnement.</span><span class="en">One payment. No subscription.</span></h2>
   <p class="sub"><span class="fr">Soutien 5 € · prix de lancement 14 € · licence 19 €. Mises à jour correctives de la version 1 incluses. Remboursement garanti si le logiciel ne fonctionne pas sur ton ordinateur (voir les <a href="/terms">conditions</a>).</span><span class="en">Support €5 · launch price €14 · license €19. Bug-fix updates of version 1 included. Refund guaranteed if the software does not work on your computer (see the <a href="/terms">terms</a>).</span></p>
@@ -159,5 +176,6 @@
   </nav>
 </div></footer>
 <script src="/assets/site.js"></script>
+<script src="/assets/pack.js"></script>
 </body>
 </html>
